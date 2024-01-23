@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Event } from 'src/app/model/Event';
 import { ServiceeventService } from 'src/app/services/serviceevent.service';
 
@@ -7,10 +7,14 @@ import { ServiceeventService } from 'src/app/services/serviceevent.service';
   templateUrl: './events.component.html',
   styleUrls: ['./events.component.css']
 })
-export class EventsComponent  implements OnInit {
+export class EventsComponent implements OnInit {
   private events: Event[];
-  constructor(private eventservice :ServiceeventService){
-    this.events=[];
+
+  constructor(private eventservice: ServiceeventService) {
+    this.events = [];
   }
-ngOnInit() :void{}
+
+  ngOnInit(): void {
+    // Your initialization logic here
+  }
 }
