@@ -18,7 +18,7 @@ import { PostCardComponent } from './layouts/post-card/post-card.component';
 import { LoginClubComponent  } from './pages/login-club/login-club.component';
 import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { MainLoginComponent } from './pages/main-login/main-login.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
 import { EventCardComponent } from './layouts/event-card/event-card.component';
 
 @NgModule({
