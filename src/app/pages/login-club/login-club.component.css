@@ -1,0 +1,128 @@
+body {
+	margin: 0;
+	color: #6a6f8c;
+	background: #c8c8c8;
+	font: 600 16px/18px 'Open Sans', sans-serif;
+  }
+  
+  *,
+  *:after,
+  *:before {
+	box-sizing: border-box;
+  }
+  
+  .login-wrap {
+	width: 100%;
+	margin: auto;
+	max-width: 800px;
+	min-height: 900px;
+	position: relative;
+	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+  }
+  
+  .login-html {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 90px 70px 50px 70px;
+	background: rgba(40, 57, 101, .9);
+  }
+  
+  /* Hide the default radio button */
+  .login-html input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  /* Style the labels to look like tabs */
+  .login-html label.tab {
+	cursor: pointer;
+	padding: 10px 20px;
+	display: inline-block;
+	color: white;
+	background: transparent;
+	transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Change style when the radio button is checked */
+  .login-html input[type="radio"]:checked + label.tab {
+	background: #1161ee;
+	color: white;
+  }
+  
+  /* Default hidden content */
+  .login-form .sign-in-htm,
+  .login-form .sign-up-htm,
+  .login-form .sign-up-club-htm {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+  }
+  
+  /* Display content when checked */
+  .login-html #tab-1:checked ~ .login-form .sign-in-htm,
+  .login-html #tab-2:checked ~ .login-form .sign-up-htm,
+  .login-html #tab-3:checked ~ .login-form .sign-up-club-htm {
+	display: block;
+	opacity: 1;
+  }
+  
+
+.login-form {
+    min-height: 345px;
+    position: relative;
+}
+
+.login-form .group {
+    margin-bottom: 15px;
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button {
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+
+.login-form .group .input,
+.login-form .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, .1);
+}
+
+.login-form .group .button {
+    background: #1161ee;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.login-form .group .label {
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Hide all forms by default */
+.login-form .sign-in-htm,
+.login-form .sign-up-htm,
+.login-form .sign-up-club-htm {
+    display: none;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+}
+
+/* Show the 'Sign In' form when the 'Sign In' tab is checked */
+#tab-1:checked ~ .login-form .sign-in-htm,
+#tab-2:checked ~ .login-form .sign-up-htm,
+#tab-3:checked ~ .login-form .sign-up-club-htm {
+    display: block;
+    opacity: 1;
+}
+
+

@@ -1,0 +1,99 @@
+<div class="login-wrap">
+
+
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+
+		<input id="tab-2" type="radio" name="tab" class="sign-up" ><label for="tab-2" class="tab">Sign Up </label>
+
+	
+
+
+
+        <!--Login -->
+		<div class="login-form">
+
+
+		<form [formGroup]="signInForm" (ngSubmit)="onSignIn()">
+			<div class="sign-in-htm">
+
+
+
+				
+				<div class="group">
+					<label for="username" class="label" required>Username</label>
+					<input id="username" type="text" class="input">
+				</div>
+
+
+
+				<div class="group">
+					<label for="password" class="label" required>Password</label>
+					<input id="password" type="password" class="input" data-type="password">
+				</div>
+
+
+
+				
+			
+				<div class="group">
+					<input type="submit" class="button" value="Sign In">
+				</div>
+				
+
+
+
+			</div>
+        </form>
+
+
+
+
+
+
+			<!-- Sign up as a normal user -->
+			<div class="sign-up-htm">
+			<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">	
+		
+				<div class="group">
+					<label for="firstname" class="label" required>First Name</label>
+					<input id="firstname" type="text" class="input">
+				</div>
+
+				<div class="group">
+					<label for="lastname" class="label" required>Last Name</label>
+					<input id="lastname" type="text" class="input">
+				</div>
+
+				<div class="group">
+					<label for="university" class="label" required>University</label>
+					<input id="university" type="text" class="input">
+				</div>
+		        
+				<div class="group">
+					<label for="username" class="label" required>Username</label>
+					<input id="username" type="text" class="input">
+				</div>
+
+				<div class="group">
+					<label for="password" class="label" required>Password</label>
+					<input id="password" type="password" class="input" data-type="password">
+				</div>
+			
+				<div class="group">
+					<input type="submit" class="button" value="Sign Up">
+				</div>
+				
+			</form>
+			</div>
+		
+
+
+
+
+        
+	
+
+    </div>
+</div>	
+</div>
