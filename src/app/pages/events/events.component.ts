@@ -8,13 +8,14 @@ import { ServiceeventService } from 'src/app/services/serviceevent.service';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
-  private events: Event[];
+   events: Event[];
 
   constructor(private eventservice: ServiceeventService) {
     this.events = [];
   }
 
   ngOnInit(): void {
-    // Your initialization logic here
+    this.events=this.eventservice.getEvents();
+    
   }
 }

@@ -1,23 +1,19 @@
 <section class="container mt-5">
-    <div class="col-md-12 text-center">
-      <h2> Latest events</h2>
-      <p class="text-black">Don't miss any opportunity to treat yourself </p>
-    </div>
-      
-    <div class="row"> 
-      <div class="col-md mt-3">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-md mt-3">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-md mt-3">
-        <app-post-card></app-post-card>
-      </div>
-      <div class="col-md mt-3">
-        <app-post-card></app-post-card>
-      </div>
-    </div>
-    
-    
-    </section>
+<div class="col-md-12 text-center">
+  <h2> Latest events</h2>
+  <p class="text-black">Don't miss any opportunity to treat yourself </p>
+</div>
+  
+<div class="row"> 
+
+  <div class="col-md mt-3">
+    <app-event-card *ngFor="let event of events" [event]="event"  ></app-event-card>
+  </div>
+
+  <div class="col-md mt-3">
+salme    </div>
+
+</div>
+
+
+</section>

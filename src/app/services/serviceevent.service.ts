@@ -15,7 +15,7 @@ export class ServiceeventService {
   }
   getEvents():Event[]
   {
-
+    console.log("fait");
    return this.events ;
 
   }
