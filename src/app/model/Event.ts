@@ -1,3 +1,4 @@
+import { Club } from "./Club";
 
 export class Event {
     id :number;
@@ -7,11 +8,12 @@ export class Event {
     description:string;
     location:string;
     photos: string[]= [];
-    date:Date
+    date:Date;
+    clubs:number[]=[];
 
 
   
-    constructor(id=0, name="", nbrOfParticpants=0, path='',  description="", location="",photos:string[]=[],date=new Date()) {
+    constructor(id=0, name="", nbrOfParticpants=0, path='',  description="", location="",photos:string[]=[],date=new Date(),clubs:number[]=[]) {
       this.id = id;
       this.name = name;
       this.nbrOfParticpants = nbrOfParticpants;
@@ -20,6 +22,7 @@ export class Event {
       this.location = location;
       this.photos= photos;
       this.date=date;
+      this.clubs=clubs;
 
     }
   }
