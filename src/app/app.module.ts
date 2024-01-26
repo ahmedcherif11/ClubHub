@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -16,11 +17,12 @@ import { CommentFormComponent } from './comments/comment-form/comment-form.compo
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
 import { LoginClubComponent  } from './pages/login-club/login-club.component';
-import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { MainLoginComponent } from './pages/main-login/main-login.component';
-import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
 import { EventCardComponent } from './layouts/event-card/event-card.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { LoginUserComponent } from './pages/login-user/login-user.component';
 
 @NgModule({
   declarations: [
@@ -39,15 +41,20 @@ import { EventDetailComponent } from './pages/event-detail/event-detail.componen
     PostCardComponent,
     LoginClubComponent,
     MainLoginComponent,
-    FirstPageComponent,
     EventCardComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    CreatePostComponent,
+    BlogComponent,
+    LoginUserComponent,
+  
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
