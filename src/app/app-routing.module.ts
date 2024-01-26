@@ -13,11 +13,12 @@ import { CommentFormComponent } from './comments/comment-form/comment-form.compo
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { MainLoginComponent } from './pages/main-login/main-login.component';
 import { LoginClubComponent } from './pages/login-club/login-club.component';
-import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { LoginUserComponent } from './pages/login-user/login-user.component';
 
 const routes: Routes = [
-{path :'' , component: HomeComponent},
+{path :'home' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},
 {path :'contact' , component:ContactUsComponent},
 {path :'club' , component:AllClubsComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: '', component: EventsComponent},
   {path: ':id', component: EventDetailComponent},
 ]},
+{path :'blog' , component:BlogComponent},
 {path :'term-conditions' , component:TermsAndConditionsComponent},
 {path :'footer' , component:FooterComponent},
 {path :'header' , component:HeaderComponent},
@@ -33,7 +35,7 @@ const routes: Routes = [
 {path :'comment-list' , component:CommentListComponent},
 {path :'login' , component:MainLoginComponent},
 {path :'clublogin' , component:LoginClubComponent},
-{path :'userlogin' , component:FirstPageComponent},
+{path :'userlogin' , component:LoginUserComponent},
 
 
 ];

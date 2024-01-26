@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -16,12 +17,16 @@ import { CommentFormComponent } from './comments/comment-form/comment-form.compo
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
 import { LoginClubComponent  } from './pages/login-club/login-club.component';
-import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { MainLoginComponent } from './pages/main-login/main-login.component';
-import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
 import { EventCardComponent } from './layouts/event-card/event-card.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
+<<<<<<< HEAD
 import { ClubCardComponent } from './layouts/club-card/club-card.component';
+=======
+import { CreatePostComponent } from './create-post/create-post.component';
+import { BlogComponent } from './pages/blog/blog.component';
+import { LoginUserComponent } from './pages/login-user/login-user.component';
+>>>>>>> d4a66faf6e907bbb76bea319884551358a87b28f
 
 @NgModule({
   declarations: [
@@ -40,16 +45,24 @@ import { ClubCardComponent } from './layouts/club-card/club-card.component';
     PostCardComponent,
     LoginClubComponent,
     MainLoginComponent,
-    FirstPageComponent,
     EventCardComponent,
     EventDetailComponent,
+<<<<<<< HEAD
     ClubCardComponent
+=======
+    CreatePostComponent,
+    BlogComponent,
+    LoginUserComponent,
+  
+
+>>>>>>> d4a66faf6e907bbb76bea319884551358a87b28f
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
