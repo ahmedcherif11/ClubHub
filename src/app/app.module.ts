@@ -20,6 +20,7 @@ import { FirstPageComponent } from './pages/first-page/first-page.component';
 import { MainLoginComponent } from './pages/main-login/main-login.component';
 import { FormsModule, ReactiveFormsModule } from  '@angular/forms';
 import { EventCardComponent } from './layouts/event-card/event-card.component';
+import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { EventCardComponent } from './layouts/event-card/event-card.component';
     LoginClubComponent,
     MainLoginComponent,
     FirstPageComponent,
-    EventCardComponent
+    EventCardComponent,
+    EventDetailComponent
   ],
   imports: [
     BrowserModule,

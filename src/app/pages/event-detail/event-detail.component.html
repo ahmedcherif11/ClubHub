@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails de l'événement</title>
+    <!-- Inclure Bootstrap CSS (assurez-vous d'ajuster le chemin selon votre configuration) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+</head>
+<body>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Logo de l'événement avec la classe CSS personnalisée -->
+                <img src="{{ event.path }}" alt="Logo de l'événement" class="img-fluid mb-3 limited-logo">
+            </div>
+            <div class="col-md-6">
+                <!-- Détails de l'événement -->
+                <h2>{{ event.name }}</h2>
+                <p><strong>Event's description:</strong> {{ event.description }}</p>
+                <p><strong>Number of places:</strong> {{ event.nbrOfParticpants }}</p>
+                <p><strong>Event's Date:</strong> {{ event.date | date:'dd MMMM yyyy' }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-4">
+                <!-- Photo 1 -->
+                <img src={{event.photos[0]}} alt="Photo 1" class="img-fluid mb-3  Photo">
+            </div>
+            <div class="col-md-4">
+                <!-- Photo 2 -->
+                <img src={{event.photos[1]}} alt="Photo 2" class="img-fluid mb-3 Photo">
+            </div>
+            <div class="col-md-4">
+                <!-- Photo 3 -->
+                <img src={{event.photos[2]}} alt="Photo 3" class="img-fluid mb-3 Photo">
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <!-- Participate button -->
+                <button class="btn btn-primary btn-lg" (click)="participer()">Participate</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure Bootstrap JS (assurez-vous d'ajuster le chemin selon votre configuration) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

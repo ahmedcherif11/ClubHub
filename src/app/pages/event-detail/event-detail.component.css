@@ -1,0 +1,12 @@
+  /* Ajoutez des styles CSS personnalisés ici */
+  .limited-logo {
+    max-width: 50%; /* Limite la largeur du logo à 100% du conteneur parent */
+    height: auto; /* Permet au logo de conserver son aspect ratio */
+    border-radius: 10px; /* Ajoute un bord arrondi */
+    border: 2px solid #ffffff; /* Ajoute une bordure solide de 2px avec une couleur grise (#ccc) */
+  }
+  .Photo  {
+    height: auto; /* Permet au logo de conserver son aspect ratio */
+    border-radius: 10px; /* Ajoute un bord arrondi */
+    border: 2px solid #ffffff; /* Ajoute une bordure solide de 2px avec une couleur grise (#ccc) */
+  }

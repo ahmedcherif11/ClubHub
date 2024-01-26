@@ -14,13 +14,17 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
 import { MainLoginComponent } from './pages/main-login/main-login.component';
 import { LoginClubComponent } from './pages/login-club/login-club.component';
 import { FirstPageComponent } from './pages/first-page/first-page.component';
+import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 
 const routes: Routes = [
 {path :'' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},
 {path :'contact' , component:ContactUsComponent},
 {path :'club' , component:AllClubsComponent},
-{path :'events' , component:EventsComponent},
+{path :'events' , children: [
+  {path: '', component: EventsComponent},
+  {path: ':id', component: EventDetailComponent},
+]},
 {path :'term-conditions' , component:TermsAndConditionsComponent},
 {path :'footer' , component:FooterComponent},
 {path :'header' , component:HeaderComponent},
