@@ -8,8 +8,6 @@ export class LoginUserService {
 
   constructor(private http:HttpClient) {  }
 
-
-    //url backend
    private url='http://localhost:3000/users' ;
 
   onSignUp(user: any){

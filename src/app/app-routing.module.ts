@@ -16,6 +16,7 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
 
 const routes: Routes = [
+{path :'' , component: MainLoginComponent},
 {path :'home' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},
 {path :'contact' , component:ContactUsComponent},

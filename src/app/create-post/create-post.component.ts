@@ -21,19 +21,21 @@ export class CreatePostComponent implements OnInit {
   }
 
   constructor(private _post : CreatePostService, private router:Router){}
+  
   ngOnInit(): void {
   }
 
   create(){
-    let fd = new FormData()
-    fd.append('clubname',this.post.clubname)
-    fd.append('lastname',this.post.text)
-    
-    this._post.create(fd)
+  
+    //club name bech twali selon el token 
+
+
+    this._post.create(this._post)
     .subscribe(
       res=>{
         this.router.navigate(['/blog'])
       },
+
       err=>{
         console.log(err);
       }
