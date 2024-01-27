@@ -24,18 +24,12 @@ export class EventDetailComponent {
       (params) => {
       console.log(params['id']);
       if (params['id']) {
-        this.event = this.eventservice.getEventById(params['id']) as any;
-        for (let i in this.event.clubs) {
-          this.clubs.push (this.clubserv.getClubById(this.event.clubs[i]) as any);
-          console.log("dddd")
-          console.log(this.clubs);
-        }
-        /*
-          this.cvService.getPersonneById(params['id']).subscribe(
+          
+      this.eventservice.getEventById(params['id']).subscribe(
             (response) => {
-              this.personne = response;
+              this.event = response;
             },
-          );*/
+          );
         console.log(this.eventservice.getEventById(1));
       } else {
         console.error("ID is undefined");
