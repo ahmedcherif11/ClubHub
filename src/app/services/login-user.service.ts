@@ -10,14 +10,14 @@ export class LoginUserService {
 
 
     //url backend
-   private url=''
+   private url='http://localhost:3000/users' ;
 
   onSignUp(user: any){
-    return this.http.post(this.url + 'onSignUp',user);
+    return this.http.post(this.url ,user);
   }
 
   onLogin(user: any){
-    return this.http.post(this.url + 'onLogin',user);
+    return this.http.post(this.url +'/login',user);
   }
 
 

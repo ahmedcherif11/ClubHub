@@ -46,75 +46,46 @@ ngOnInit(): void {}
 
 
   onSignUp() {
-   let fd = new FormData()
-   fd.append('firstname',this.user.firstname)
-   fd.append('lastname',this.user.lastname)
-   fd.append('university',this.user.university)
-   fd.append('username',this.user.username)
-   fd.append('password',this.user.password)
-
+   
    //fd.append('image',this.image)
-  this._user.onSignUp(fd)
-  console.log("Congratulations you became a member of our community!")
+  this._user.onSignUp(this.user)
+  .subscribe(
+    res=>{
+      this.router.navigate(['/home']);
+    },
+    err=>{
+      console.log(err);
+    }
+  )
+  
  
 
   }
 
 
   token:any;
-  onlogin() {
-    this._user.onLogin(this.user_log)
-    .subscribe(
-      res=>{
+  onlogin() {   
+  this._user.onLogin(this.user_log)
+  .subscribe(
+    res=>{
 
-       this.token=res;
-       localStorage.setItem('token',this.token.mytoken)
-       this.router.navigate(['/home'])
+      this.token = res;
+      // {myToken: 'qddqssdsqd'}
+      localStorage.setItem('token' , this.token.access_token)
+      this.router.navigate(['/home']);
 
-      },
-      err=>{
-        console.log(err);
-      }
-    )
-  }
-
-
-
-
-/*
- signInForm: FormGroup;
-  signUpForm: FormGroup;
-
-
-  constructor(private fb: FormBuilder) {
-    this.signInForm = this.fb.group({
-      username: ['', [Validators.required]],
-      password: ['', Validators.required]
-    });
-
-    this.signUpForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      university: ['', Validators.required],
-      username: ['', [Validators.required]],
-      password: ['', Validators.required]
-    });
-
-  }
-*/
-  
+    },
+    err=>{
+      console.log(err);
+      
+    }
+  );
 
 }
 
 
 
 
+  
 
-
-
-
-
-
-
-
-
+}
