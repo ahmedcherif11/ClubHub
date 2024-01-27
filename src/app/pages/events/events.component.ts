@@ -15,7 +15,13 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.events=this.eventservice.getEvents();
-    
+   this.eventservice.getEvents().subscribe(
+      (events) => {
+        this.events = events;
+      },
+      (erreur) => {
+       alert(`Problème de connexions les donnèes sont fictives :(`);
+      }
+    );
   }
 }
