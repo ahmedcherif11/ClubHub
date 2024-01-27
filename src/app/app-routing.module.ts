@@ -9,8 +9,6 @@ import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
-import { CommentFormComponent } from './comments/comment-form/comment-form.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { MainLoginComponent } from './pages/main-login/main-login.component';
 import { LoginClubComponent } from './pages/login-club/login-club.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
@@ -31,8 +29,6 @@ const routes: Routes = [
 {path :'footer' , component:FooterComponent},
 {path :'header' , component:HeaderComponent},
 {path :'navbar' , component:NavbarComponent},
-{path :'comment-form' , component:CommentFormComponent},
-{path :'comment-list' , component:CommentListComponent},
 {path :'login' , component:MainLoginComponent},
 {path :'clublogin' , component:LoginClubComponent},
 {path :'userlogin' , component:LoginUserComponent},
