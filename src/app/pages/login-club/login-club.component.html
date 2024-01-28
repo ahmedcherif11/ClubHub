@@ -12,19 +12,17 @@
         <!--Login Club -->
 		<div class="login-form">
 			<div class="sign-in-htm">
-
-
 	
 				<div class="group">
-					<label for="clubname" class="label" required>Clubname</label>
-					<input [(ngModel)]="club.clubname" id="clubname" type="text" class="input">
+					<label for="username" class="label" required>Username</label>
+					<input [(ngModel)]="club_log.username" id="username" type="text" class="input">
 				</div>
 
 
 
 				<div class="group">
 					<label for="password" class="label" required>Password</label>
-					<input [(ngModel)]="club.password" id="password" type="password" class="input" data-type="password">
+					<input [(ngModel)]="club_log.password" id="password" type="password" class="input" data-type="password">
 				</div>
 
 
@@ -48,8 +46,6 @@
 
 		<div class="sign-up-club-htm">
         	<div class="group">
-				<label for="clubname1" class="label" required>Club Name</label>
-				<input [(ngModel)]="club.clubname" id="clubname1" type="text" class="input" >
 		
 				<!--
 		        <div *ngIf="signUpClubForm.controls['clubName'].invalid && signUpClubForm.controls['clubName'].touched"
@@ -58,6 +54,12 @@
                  </div>-->
 
 			</div>
+
+			<div class="group">
+				<label for="clubname" class="label" required>Club Name </label>
+				<input [(ngModel)]="club.clubname" id="clubname" type="date" class="input" >
+			</div>
+
 
 			<div class="group">
 				<label for="creationdate" class="label" required>Creation Date</label>
@@ -88,6 +90,11 @@
 			</div>
 
 
+
+
+			<label for="username1" class="label" required>Club Name</label>
+			<input [(ngModel)]="club.username" id="username1" type="text" class="input" >
+	
 			<div class="group">
 				<label for="password1" class="label">Password</label>
 				<input [(ngModel)]="club.password" id="password1" type="password" class="input" data-type="password">

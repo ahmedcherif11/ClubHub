@@ -16,15 +16,16 @@ import { LoginClubService } from 'src/app/services/login-club.service';
 export class LoginClubComponent implements OnInit {
 
   club={
-    clubname: '',
+    clubname:'',
     creationdate:'',
     university: '',
     field: '',
+    username: '',
     password: ''
   }
 
   club_log={
-    clubname: '',
+    username: '',
     password: '',
   }
 
@@ -37,7 +38,7 @@ constructor(private _club: LoginClubService,private router : Router) {}
   this._club.onSignUpClub(this.club)
   .subscribe(
     res=>{
-      this.router.navigate(['/home']);
+      this.router.navigate(['/clublogin']);
     },
     err=>{
       console.log(err);

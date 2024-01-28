@@ -6,23 +6,19 @@ import { Injectable } from '@angular/core';
 })
 export class CreatePostService {
 
+///
+token = localStorage.getItem("token"); 
+/// 
   constructor(private http:HttpClient) { }
-//backend
+
   url=''
 
 create(post:any){
-
-   return this.http.post(this.url + 'add',post);
-
+  ///
+   const headers = { 'Authorization': 'Bearer '+this.token }
+   ///
+   return this.http.post(this.url+'add',post);
 
 
 }
-
-
-
-
-
-
-
-
 }

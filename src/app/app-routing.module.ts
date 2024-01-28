@@ -16,11 +16,22 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
 
 const routes: Routes = [
-{path :'' , component: MainLoginComponent},
+
+{path: '', redirectTo: '/login', pathMatch: 'full' },
+{path :'login' ,children:[
+  {path: '', component:MainLoginComponent},
+  {path: ':clublogin', component:  LoginClubComponent},
+  {path: ':userlogin', component: LoginUserComponent},
+]
+ },
+
 {path :'home' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},
 {path :'contact' , component:ContactUsComponent},
 {path :'club' , component:AllClubsComponent},
+
+
+
 {path :'events' , children: [
   {path: '', component: EventsComponent},
   {path: ':id', component: EventDetailComponent},
@@ -30,9 +41,7 @@ const routes: Routes = [
 {path :'footer' , component:FooterComponent},
 {path :'header' , component:HeaderComponent},
 {path :'navbar' , component:NavbarComponent},
-{path :'login' , component:MainLoginComponent},
-{path :'clublogin' , component:LoginClubComponent},
-{path :'userlogin' , component:LoginUserComponent},
+
 
 
 ];

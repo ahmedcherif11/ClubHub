@@ -42,7 +42,7 @@ ngOnInit(): void {}
   this._user.onSignUp(this.user)
   .subscribe(
     res=>{
-      this.router.navigate(['/home']);
+      this.router.navigate(['/userlogin']);
     },
     err=>{
       console.log(err);

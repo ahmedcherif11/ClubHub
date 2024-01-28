@@ -1,13 +1,53 @@
+.card {
+  border-radius: 10px; /* Rounded corners for the card */
+}
+
+.card-body {
+  position: relative; /* For absolute positioning of the like button */
+}
+
+button.liked,
+button.custom-btn-size {
+  background-color: #3d1976; /* A color that matches your theme */
+  border: none;
+  color: white;
+  font-weight: bold; /* Make the text bold */
+  padding: 10px 20px; /* Increase padding for a larger button */
+  border-radius: 20px; /* Rounded corners for the button */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+button.liked:hover,
+button.custom-btn-size:hover {
+  background-color: #0d47a1; /* Darker shade on hover for interaction */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Larger shadow on hover for depth */
+}
+
 button.liked {
-    background-color: #3ac84f;
-    border-color: #3ac84f ;
-    color: white;
-  }
-  
-  .like-count {
-    margin-left: 5px; 
-  }
-  .custom-btn-size {
-    font-size: 16px; 
-    padding: 8px 16px; 
-  }
+  background-color: #3ac84f; /* Green color to indicate 'liked' state */
+}
+
+.like-count {
+  margin-left: 10px; /* Increase space between button and like count */
+  font-size: 18px; /* Larger font size for visibility */
+  font-weight: bold; /* Bold font weight for emphasis */
+  color: #3d1976; /* Color to match the button for cohesion */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover effect for the like count to indicate interactivity */
+.like-count:hover {
+  color: #0d47a1; /* Darker shade on hover */
+}
+
+/* Styling for h1 and p inside the card to match the theme */
+.card h1 {
+  color: #333;
+  margin-bottom: 0.5em; /* Adjusted spacing */
+}
+
+.card p {
+  color: #666;
+  font-size: 1rem; /* Adjusted font size */
+}
