@@ -18,3 +18,16 @@
    </div>
  </nav>
  
+
+
+ <!-- hedhi elli bech nestaamlouha baed el authentification juste ena khater maandich el back manajamech nkhaliha sinon manajamech naccedi lel pages lokhrin 
+  
+  
+  
+  <a *ngIf="__authUser.isLoggedInUser() || __authClub.isLoggedInClub()"class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active-link']">Home <span class="sr-only"></span></a>
+         <a *ngIf="__authUser.isLoggedInUser() || __authClub.isLoggedInClub()" class="nav-link" [routerLink]="['/club']" [routerLinkActive]="['active-link']">Clubs <span class="sr-only"></span></a>
+         <a *ngIf="__authUser.isLoggedInUser() || __authClub.isLoggedInClub()" class="nav-link" [routerLink]="['/events']" [routerLinkActive]="['active-link']">Events <span class="sr-only"></span></a>
+         <a *ngIf="__authUser.isLoggedInUser() || __authClub.isLoggedInClub()" class="nav-link" [routerLink]="['/blog']" [routerLinkActive]="['active-link']">Blog <span class="sr-only"></span></a>
+         <a *ngIf=" __authClub.isLoggedInClub()" class="nav-link" [routerLink]="['/profile',_authClub.getClubDataFromToken().id]" [routerLinkActive]="['active-link']">Profil <span class="sr-only"></span></a>
+         <a *ngIf="__authUser.isLoggedInUser() || __authClub.isLoggedInClub()" class="nav-link" [routerLinkActive]="['active-link']">Logout <span class="sr-only"></span></a>
+-->

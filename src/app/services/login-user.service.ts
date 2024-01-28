@@ -18,6 +18,30 @@ export class LoginUserService {
     return this.http.post(this.url +'/login',user);
   }
 
+  isLoggedInUser(){
+
+    let token =localStorage.getItem('token');
+    if(token){
+      return true ;
+    }else{
+      return false;
+    }
+  }
+
+getUserDataFromToken(){
+
+  let token =localStorage.getItem('token');
+  if(token){
+    let data=JSON.parse(window.atob(token.split('.')[1]))
+    return data; 
+
+  }
+
+
+}
+
+
+
 
  
 }

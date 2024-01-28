@@ -1,8 +1,7 @@
 import { Component , OnInit} from '@angular/core';
 import { Route, Router } from '@angular/router';
-
-import { post } from 'src/app/model/post';
 import { CreatePostService } from 'src/app/services/create-post.service';
+import { LoginClubService } from 'src/app/services/login-club.service';
 
 
 
@@ -15,22 +14,23 @@ export class CreatePostComponent implements OnInit {
 
 
   post: any={
-    clubname :'',
+    clubname:'',
     text:'',
    
   }
 
-  constructor(private _post : CreatePostService, private router:Router){}
+  constructor(private _post : CreatePostService,private _authClub: LoginClubService, private router:Router){}
   
-  ngOnInit(): void {
+  ngOnInit(): void { const clubData = this._authClub.getClubDataFromToken();
+    if (clubData) {
+      this.post.clubname = clubData.clubname;}// Assign the clubname from token
   }
 
   create(){
+
   
-    //club name bech twali selon el token 
-
-
-    this._post.create(this._post)
+    this._post.create(this.post) 
+   
     .subscribe(
       res=>{
         this.router.navigate(['/blog'])
@@ -41,5 +41,10 @@ export class CreatePostComponent implements OnInit {
       }
     )
   }
+
+  
+
+
+
 
 }
