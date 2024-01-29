@@ -1,0 +1,11 @@
+<div class="card h-100" style="width: 18rem;">
+        <img src={{event.logo_path}} class="card-img-top" alt="event logo">
+        <div class="card-body">
+            <h5 class="card-title">{{event.name}}</h5>
+            <p class="card-text">{{event.date | date:'dd MMMM yyyy' }}</p>
+                <button href="/profil" class="btn btn-primary" style="background-color: black; width: 100%;" (click)="detail()">view more</button>
+            </div>
+        <div class="card-footer">
+            <small class="text-body-secondary">Last updated 3 mins ago</small>
+        </div>
+    </div>
