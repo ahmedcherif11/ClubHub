@@ -19,7 +19,7 @@ import { MainLoginComponent } from './pages/main-login/main-login.component';
 import { EventCardComponent } from './layouts/event-card/event-card.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 import { ClubCardComponent } from './layouts/club-card/club-card.component';
-import { CreatePostComponent } from './create-post/create-post.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
 import { ProfilclubComponent } from './pages/profilclub/profilclub.component';

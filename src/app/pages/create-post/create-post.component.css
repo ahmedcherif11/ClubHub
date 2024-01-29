@@ -1,0 +1,39 @@
+/* Styles for the inputs and create button */
+.form-input-group {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px; /* Adjust to fit your design */
+    margin: 20px auto; /* Centering the form in the middle of the page */
+    background: #ffffff; /* White background */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adding a subtle shadow */
+    border-radius: 8px; /* Slightly rounded corners for the inputs container */
+  }
+  
+  .form-input-group input[type="text"],
+  .form-input-group button {
+    margin-bottom: 10px; /* Space between inputs and button */
+    padding: 10px 15px; /* Padding inside inputs and button */
+    border: 2px solid #d9d9d9; /* Adding a border to inputs */
+    border-radius: 4px; /* Slightly rounded corners for inputs */
+    font-size: 16px; /* Making text a bit larger for readability */
+  }
+  
+  .form-input-group input[type="text"]:focus {
+    border-color: #3d1976; /* Highlight color when input is focused */
+    outline: none; /* Removing the default outline */
+  }
+  
+  .form-input-group button {
+    background-color: #3d1976; /* Matching button color with your theme */
+    color: #ffffff; /* White text color for the button */
+    border: none; /* Removing border for the button */
+    cursor: pointer; /* Cursor to pointer to indicate it's clickable */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .form-input-group button:hover {
+    background-color: #a6cdff; /* Darker shade on hover */
+    color: #100f0f
+  }
+  

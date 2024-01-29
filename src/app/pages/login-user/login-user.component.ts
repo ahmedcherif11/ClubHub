@@ -30,16 +30,8 @@ export class LoginUserComponent implements OnInit {
     university: '',
     username: '',
     password: ''
+  }
   
-  }
-/*
-  image: any;
-
-  select(e:any){
-     this.image=e.target.files[0];
-  }
-
-*/
 constructor(private _user: LoginUserService,private router : Router){}
 
 ngOnInit(): void {}
@@ -47,30 +39,30 @@ ngOnInit(): void {}
 
   onSignUp() {
    
-   //fd.append('image',this.image)
   this._user.onSignUp(this.user)
   .subscribe(
     res=>{
-      this.router.navigate(['/home']);
+      this.router.navigate(['/userlogin']);
     },
     err=>{
       console.log(err);
     }
   )
-  
- 
-
   }
 
 
   token:any;
-  onlogin() {   
+
+
+  onlogin() {  
+    
+    
   this._user.onLogin(this.user_log)
   .subscribe(
     res=>{
 
       this.token = res;
-      // {myToken: 'qddqssdsqd'}
+
       localStorage.setItem('token' , this.token.access_token)
       this.router.navigate(['/home']);
 

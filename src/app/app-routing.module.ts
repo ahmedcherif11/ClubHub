@@ -17,6 +17,10 @@ import { LoginUserComponent } from './pages/login-user/login-user.component';
 import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/login', pathMatch: 'full' },
+{path :'login' , component:MainLoginComponent},
+{path:'clublogin', component:  LoginClubComponent},
+{path:'userlogin', component: LoginUserComponent},
 {path :'home' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},
 {path :'contact' , component:ContactUsComponent},
@@ -33,9 +37,7 @@ const routes: Routes = [
 {path :'footer' , component:FooterComponent},
 {path :'header' , component:HeaderComponent},
 {path :'navbar' , component:NavbarComponent},
-{path :'login' , component:MainLoginComponent},
-{path :'clublogin' , component:LoginClubComponent},
-{path :'userlogin' , component:LoginUserComponent},
+
 
 
 ];

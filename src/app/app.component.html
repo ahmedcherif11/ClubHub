@@ -1,8 +1,10 @@
 <app-header></app-header>
+<app-navbar *ngIf="showNavbar"></app-navbar>
+ 
 
-<app-navbar></app-navbar>
     <div class="app-body">
         <router-outlet></router-outlet>
     </div>
 
-<app-footer></app-footer>
+<app-footer *ngIf="showNavbar"></app-footer>
+

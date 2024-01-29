@@ -1,46 +1,43 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as jwt_decode from 'jwt-decode';
+import { HttpClient } from '@angular/common/http';
+
+import * as jwt_decode from 'jwt-decode'
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginUserService {
+
+
+export class LoginClubService {
 
   constructor(private http:HttpClient) {  }
 
    private url='http://localhost:3000/users' ;
 
-  onSignUp(user: any){
-    return this.http.post(this.url ,user);
+  onSignUpClub(club: any){
+    return this.http.post(this.url ,club);
   }
 
-  onLogin(user: any){
-    return this.http.post(this.url +'/login',user);
+  onLoginClub(club: any){
+    return this.http.post(this.url +'/login',club);
   }
 
 
-
-
-
- 
-
-  isLoggedInUser(){
+  isLoggedInClub(){
 
     let token =localStorage.getItem('token');
     if(token ){
       const decodedToken = jwt_decode.jwtDecode(token) as { [key: string]: string }; 
       const role = decodedToken['role']; 
-      return role === 'user';
+      return role === 'club';
     }else{
       return false;
     }
 
   }
-
-
-
-getUserDataFromToken(){
+getClubDataFromToken(){
 
   let token =localStorage.getItem('token');
   if(token){
@@ -54,6 +51,5 @@ getUserDataFromToken(){
 
 
 
-
- 
 }
+
