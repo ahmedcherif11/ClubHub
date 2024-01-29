@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -18,24 +19,35 @@ export class LoginUserService {
     return this.http.post(this.url +'/login',user);
   }
 
+
+
+
+
+ 
+
   isLoggedInUser(){
 
     let token =localStorage.getItem('token');
-    if(token){
-      return true ;
+    if(token ){
+      const decodedToken = jwt_decode.jwtDecode(token) as { [key: string]: string }; 
+      const role = decodedToken['role']; 
+      return role === 'user';
     }else{
       return false;
     }
+
   }
+
+
 
 getUserDataFromToken(){
 
   let token =localStorage.getItem('token');
   if(token){
-    let data=JSON.parse(window.atob(token.split('.')[1]))
-    return data; 
+    const decodedToken = jwt_decode.jwtDecode(token) as { [key: string]: string }; 
+    return decodedToken ; 
 
-  }
+  }return null;
 
 
 }

@@ -16,7 +16,14 @@ export class AppComponent {
       filter((event: RouterEvent): event is NavigationEnd => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       
-      this.showNavbar = !event.urlAfterRedirects.startsWith('/login');
+
+
+      const isLoginRoute = event.urlAfterRedirects.startsWith('/login')
+      || event.urlAfterRedirects.startsWith('/clublogin')
+      || event.urlAfterRedirects.startsWith('/userlogin');
+
+    this.showNavbar = !isLoginRoute;
+  
     });
     }
   }

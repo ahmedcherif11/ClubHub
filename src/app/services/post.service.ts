@@ -1,35 +1,37 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { switchMap } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { post } from 'src/app/model/post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+  token = localStorage.getItem("token"); 
+
+
 
   private posts :post[];
-  constructor() {
+  constructor(private http:HttpClient) {
 
-    this.posts=[
-      new post('securinets','Exciting news - we have got a prize pool of 1000DT waiting for our champions.🏆Join us at DARKEST HOUR CTF and stand a chance to win big!'),
-      new post('securinets','Exciting news - we have got a prize pool of 1000DT waiting for our champions.'),
-      new post('securinets','Join us at DARKEST HOUR CTF and stand a chance to win big!'),
-    ]
-
-
-   }
-   getPosts():post[]
-   {
-     console.log("fait");
-    return this.posts ;
- 
+    this.posts=[]
    }
 
+   url=''
+   create(postData: any): Observable<post[]> {
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') };
+    return this.http.post<post[]>(this.url + '/add', postData, { headers });
   }
+  
 
 
 
+   getPosts(): Observable<post[]> {
+    return this.http.get<post[]>(this.url);
+  }
+  
 
 
 
-
+}

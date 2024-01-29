@@ -18,12 +18,11 @@ import { LoginUserComponent } from './pages/login-user/login-user.component';
 const routes: Routes = [
 
 {path: '', redirectTo: '/login', pathMatch: 'full' },
-{path :'login' ,children:[
-  {path: '', component:MainLoginComponent},
-  {path: ':clublogin', component:  LoginClubComponent},
-  {path: ':userlogin', component: LoginUserComponent},
-]
- },
+{path :'login' , component:MainLoginComponent},
+{path:'clublogin', component:  LoginClubComponent},
+{path:'userlogin', component: LoginUserComponent},
+
+
 
 {path :'home' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},

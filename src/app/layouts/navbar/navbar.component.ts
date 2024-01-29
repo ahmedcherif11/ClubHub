@@ -10,9 +10,27 @@ import { LoginUserService } from 'src/app/services/login-user.service';
 export class NavbarComponent implements OnInit {
 
 
-  constructor(public _authUser: LoginUserService,public _authClub :LoginClubService){}
+  constructor(private _authUser: LoginUserService,private _authClub :LoginClubService){}
+
+  public isLoggedInClub(): boolean {
+    return this._authClub.isLoggedInClub();
+  }
+  public isLoggedInUser(): boolean {
+    return this._authUser.isLoggedInUser();
+  }
+
+
+
+
+
   ngOnInit(): void {
     
   }
+ 
+
+
+
+
+
 
 }

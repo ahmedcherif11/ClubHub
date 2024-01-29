@@ -18,14 +18,9 @@ export class SinglePostComponent {
   isLiked: boolean = false;
   likeCount: number = 100;
 
-
-
-
   constructor() {
     
   }
-
- 
 
   toggleLike() {
     this.isLiked = !this.isLiked;

@@ -57,7 +57,7 @@
 
 			<div class="group">
 				<label for="clubname" class="label" required>Club Name </label>
-				<input [(ngModel)]="club.clubname" id="clubname" type="date" class="input" >
+				<input [(ngModel)]="club.clubname" id="clubname" type="text" class="input" >
 			</div>
 
 
@@ -91,9 +91,11 @@
 
 
 
-
-			<label for="username1" class="label" required>Club Name</label>
-			<input [(ngModel)]="club.username" id="username1" type="text" class="input" >
+			<div class="group">
+				<label for="username1" class="label">Username</label>
+				<input [(ngModel)]="club.username" id="username1" type="text" class="input" >
+			</div>
+			
 	
 			<div class="group">
 				<label for="password1" class="label">Password</label>
