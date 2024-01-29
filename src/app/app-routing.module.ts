@@ -14,12 +14,16 @@ import { LoginClubComponent } from './pages/login-club/login-club.component';
 import { EventDetailComponent } from './pages/event-detail/event-detail.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
+import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
 
 const routes: Routes = [
 {path :'home' , component: HomeComponent},
 {path :'post' , component:SinglePostComponent},
 {path :'contact' , component:ContactUsComponent},
-{path :'club' , component:AllClubsComponent},
+{path :'club' ,children:[
+   {path : '' ,component:AllClubsComponent},
+    {path : ':id' ,component:ProfilclubComponent},
+]},
 {path :'events' , children: [
   {path: '', component: EventsComponent},
   {path: ':id', component: EventDetailComponent},

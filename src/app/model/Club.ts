@@ -4,13 +4,15 @@ export class Club {
     name:string ;
     path :string;
     description:string;
+    creationDate:Date;
     field :string;
     
-    constructor(id=0, name="", path='',  description="", field="") {
+    constructor(id=0, name="", path='',  description="",creationDate=new Date(), field="") {
       this.id = id;
       this.name = name;
       this.path = path;
       this.description = description;
+      this.creationDate=creationDate;
       this.field = field;
     }
 }

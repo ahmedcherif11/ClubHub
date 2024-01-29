@@ -18,8 +18,14 @@ export class AllClubsComponent {
   
   
   ngOnInit(): void {
-    this.clubs=this.clubserv.getClubs();
-    
+    this.clubserv.getClubs().subscribe(
+      (clubs) => {
+        this.clubs = clubs;
+      },
+      (erreur) => {
+       alert(`Problème de connexions les donnèes sont fictives :(`);
+      }
+    );
   }
-  
 }
+
