@@ -28,7 +28,8 @@ export class PostService {
 
 
    getPosts(): Observable<post[]> {
-    return this.http.get<post[]>(this.url);
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') };
+    return this.http.get<post[]>(this.url,{ headers });
   }
   
 

@@ -8,10 +8,10 @@
         <p style="font-size: smaller; font-weight: bold; color: rgb(8, 70, 122);">{{ post.createdAt | date:'short' }}</p>
 
         <div class="d-flex justify-content-end align-items-center mt-3">
-          <button type="button" class="btn custom-btn-size" [ngClass]="{'liked': isLiked}" (click)="toggleLike()">
+          <button type="button" class="btn custom-btn-size" [ngClass]="{'liked': isLiked}" (click)="addLike()">
             Like
           </button>
-          <h6 class="like-count">{{ likeCount }}</h6>
+          <h6 class="like-count">{{ post.likes }}</h6>
         </div>
       </div>
     </div>
