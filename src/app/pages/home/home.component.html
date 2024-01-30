@@ -28,21 +28,14 @@
   <h2> Latest events</h2>
   <p class="text-black">Don't miss any opportunity to treat yourself </p>
 </div>
-  
-<div class="row"> 
-  <div class="col-md mt-3">
-    <app-post-card></app-post-card>
-  </div>
-  <div class="col-md mt-3">
-    <app-post-card></app-post-card>
-  </div>
-  <div class="col-md mt-3">
-    <app-post-card></app-post-card>
-  </div>
-  <div class="col-md mt-3">
-    <app-post-card></app-post-card>
-  </div>
-</div>
 
-
-</section>
+  <div class="row"> 
+    <div class="col-md mt-3">
+      <div class="row">
+        <div class="col-md-2 mb-3 card-container" *ngFor="let event of events">
+          <app-minieventcard [event]="event" class="small-card"></app-minieventcard>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>

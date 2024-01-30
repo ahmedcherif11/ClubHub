@@ -3,7 +3,7 @@ import { Event } from 'src/app/model/Event';
 import { Club } from '../model/Club';
 import { ClubserviceService } from './clubservice.service';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 const API_LINK = 'http://localhost:3000/event';
 
@@ -13,19 +13,25 @@ const API_LINK = 'http://localhost:3000/event';
 export class ServiceeventService {
   private events: Event[];
 
-  constructor(    private http: HttpClient
-
-  ) {
+  constructor(private http: HttpClient) {
     this.events = [];
   }
+
   token: string | null = localStorage.getItem('token');
-  getEvents():Observable <Event[]> {
+
+  getEvents(): Observable<Event[]> {
     console.log(this.token);
-    const headers = { 'Authorization': 'Bearer '+ this.token }
-    return this.http.get<Event[]>(API_LINK,{headers});  }
+    const headers = { 'Authorization': 'Bearer ' + this.token };
+    return this.http.get<Event[]>(API_LINK, { headers });
+  }
 
+  getEventById(id: number): Observable<Event> {
+    const headers = { 'Authorization': 'Bearer ' + this.token };
+    return this.http.get<Event>(API_LINK + `/${id}`, { headers });
+  }
 
-  getEventById(id: number):Observable< Event> {
-    const headers = { 'Authorization': 'Bearer '+ this.token }
-    return this.http.get<Event>(API_LINK + `/${id}`,{headers});  }
+  getLatestEvents(): Observable<Event[]> {
+    const headers = { 'Authorization': 'Bearer ' + this.token };
+    return this.http.get<Event[]>('http://localhost:3000/event/lastEvents', { headers });
+  }
 }
