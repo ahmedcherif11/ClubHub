@@ -1,27 +1,24 @@
 <nav class="navbar navbar-expand-lg fixed-top">
-   <div class="container">
-     <div class="collapse navbar-collapse justify-content-center">
-       <ul class="navbar-nav">
-        
+  <div class="container">
+    <div class="collapse navbar-collapse justify-content-center">
+      <ul class="navbar-nav">
+       
 
 
-                
-        <a *ngIf="isLoggedInUser() || isLoggedInClub()"class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active-link']">Home <span class="sr-only"></span></a>
-        <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/club']" [routerLinkActive]="['active-link']">Clubs <span class="sr-only"></span></a>
-        <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/events']" [routerLinkActive]="['active-link']">Events <span class="sr-only"></span></a>
-        <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/blog']" [routerLinkActive]="['active-link']">Blog <span class="sr-only"></span></a>
-        <a *ngIf="isLoggedInClub()" class="nav-link" [routerLink]="['/profile']" [routerLinkActive]="['active-link']">Profil <span class="sr-only"></span></a>
-        <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLinkActive]="['active-link']">Logout <span class="sr-only"></span></a>
+               
+       <a *ngIf="isLoggedInUser() || isLoggedInClub()"class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active-link']">Home <span class="sr-only"></span></a>
+       <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/club']" [routerLinkActive]="['active-link']">Clubs <span class="sr-only"></span></a>
+       <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/events']" [routerLinkActive]="['active-link']">Events <span class="sr-only"></span></a>
+       <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/blog']" [routerLinkActive]="['active-link']">Blog <span class="sr-only"></span></a>
+       <a *ngIf="isLoggedInClub()" class="nav-link" [routerLink]="['/profile']" [routerLinkActive]="['active-link']">Profil <span class="sr-only"></span></a>
+       <a *ngIf="isLoggedInUser() || isLoggedInClub()" class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['/active-link']" (click)="logout()">Logout <span class="sr-only"></span></a>
 
-         <li class="nav-item ml-3"><a href="" class="nav-link"><i class="bi bi-box-arrow-right"></i></a></li>
-       </ul>
-     </div>
-
-
-
-     
-   </div>
- </nav>
- 
+        <li class="nav-item ml-3"><a href="" class="nav-link"><i class="bi bi-box-arrow-right"></i></a></li>
+      </ul>
+    </div>
 
 
+
+    
+  </div>
+</nav>

@@ -23,7 +23,7 @@
                 <p><strong>Number of places:</strong> {{ event.places }}</p>
                 <p><strong>Event's Date:</strong> {{ event.date | date:'dd MMMM yyyy' }}</p>
                 <p><strong>Location:</strong> {{ event.place }}</p>
-                <p><strong>Organized by:</strong> <span *ngFor="let club of clubs; let last = last"> {{ club.name }}{{ !last ? ', ' : '' }}</span></p>
+                <p><strong>Organized by:</strong>  {{ event.organizer.name }}</p>
 
      
             </div>

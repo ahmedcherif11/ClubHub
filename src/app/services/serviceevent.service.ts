@@ -40,6 +40,6 @@ export class ServiceeventService {
     
     console.log(this.token);
     const headers = { 'Authorization': 'Bearer ' + this.token };
-    return this.http.post('http://localhost:3000/event/Participate'+ `/${id}`, { headers });
+    return this.http.post('http://localhost:3000/event/Participate'+ `/${id}`,{}, { headers });
   }
 }
