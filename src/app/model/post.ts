@@ -1,14 +1,16 @@
 export class post {
-    name :string;
+    id : any;
+    owner :any;
     text:string;
     createdAt: Date;
+    likes: number;
    
 
   
-    constructor( name="", text="",createdAt=new Date()) {
-      this.name = name;
+    constructor(text="",createdAt=new Date(),likes=0) {
+
       this.text = text;
       this.createdAt= createdAt;
-      
+      this.likes=likes;
     }
   }

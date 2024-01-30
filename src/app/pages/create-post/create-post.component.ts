@@ -14,7 +14,7 @@ export class CreatePostComponent implements OnInit {
 
 
   post: any={
-    name:'',
+ 
     text:'',
     createAt:new Date(),
    
@@ -23,7 +23,6 @@ export class CreatePostComponent implements OnInit {
   constructor(private _post : PostService,private _authClub: LoginClubService, private router:Router){}
   
   ngOnInit(): void {  
-    this.setPostNameFromToken();
   }
 
   create() {
@@ -42,14 +41,7 @@ export class CreatePostComponent implements OnInit {
       );
   }
 
-  setPostNameFromToken() {
-    const clubData = this._authClub.getClubDataFromToken();
-    if (clubData && clubData['name']) {
-      this.post.name = clubData['name'];
-    }
 
 
 
-
-}
 }

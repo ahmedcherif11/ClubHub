@@ -2,9 +2,10 @@
   <div class="row">
     <div class="card shadow-effect">
       <div class="card-body py-4">
-       
-        <h1 class="mt-3 mb-3">{{ post.name }}</h1>
-        <p>{{ post.text }}</p>
+        
+        <h1 class="mt-3 mb-3">{{ post.owner.name }}</h1>
+        <h3>{{ post.text }}</h3>
+        <p style="font-size: smaller; font-weight: bold; color: rgb(8, 70, 122);">{{ post.createdAt | date:'short' }}</p>
 
         <div class="d-flex justify-content-end align-items-center mt-3">
           <button type="button" class="btn custom-btn-size" [ngClass]="{'liked': isLiked}" (click)="toggleLike()">
