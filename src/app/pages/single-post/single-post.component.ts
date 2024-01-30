@@ -27,10 +27,4 @@ export class SinglePostComponent {
     this.likeCount += this.isLiked ? 1 : -1;
   }
 
-
-
-
-
-
-
 }

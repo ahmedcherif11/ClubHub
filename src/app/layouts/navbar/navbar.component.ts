@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginClubService } from 'src/app/services/login-club.service';
 import { LoginUserService } from 'src/app/services/login-user.service';
  
@@ -20,13 +21,14 @@ export class NavbarComponent implements OnInit {
   }
 
 
-
-
-
   ngOnInit(): void {
-    
   }
- 
+   
+
+  logout(){
+   localStorage .removeItem('token');
+
+  }
 
 
 
