@@ -3,26 +3,31 @@ import { Club } from "./Club";
 export class Event {
     id :number;
     name:string;
-    nbrOfParticpants:number;
-    path:string;
     description:string;
-    location:string;
-    photos: string[]= [];
+    place:string;
     date:Date;
-    clubs:number[]=[];
+
+    logo_path:string;
+    image1_path :string;
+    image2_path :string;
+    image3_path :string;
+    places:number;
+    orgonizerID:number;
 
 
   
-    constructor(id=0, name="", nbrOfParticpants=0, path='',  description="", location="",photos:string[]=[],date=new Date(),clubs:number[]=[]) {
+    constructor(id=0, name="", description="", place="", date=new Date(), logo_path='', image1_path='', image2_path='', image3_path='', places=0, orgonizerID=0) {
       this.id = id;
       this.name = name;
-      this.nbrOfParticpants = nbrOfParticpants;
-      this.path = path;
       this.description = description;
-      this.location = location;
-      this.photos= photos;
-      this.date=date;
-      this.clubs=clubs;
+      this.place = place;
+      this.date = date;
+      this.logo_path = logo_path;
+      this.image1_path = image1_path;
+      this.image2_path = image2_path;
+      this.image3_path = image3_path;
+      this.places = places;
+      this.orgonizerID = orgonizerID;
 
     }
   }

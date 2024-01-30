@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil du {{club.name}}</title>
+
+</head>
+<body>
+
+    <header>
+        <!-- Logo du club -->
+        <img id="club-logo" src={{club.path}} alt="Logo du Club" style="border-radius: 50%;">
+        <!-- Nom du club -->
+        <h1 id="club-name">{{club.name}}</h1>
+    </header>
+
+    <div id="club-info">
+        <!-- Informations supplémentaires du club -->
+        <p><strong>Date de creation :</strong>{{club.creationDate | date:'dd MMMM yyyy' }}</p>
+        <p><strong>Field :</strong>{{club.field}}</p>
+        <!-- Ajoutez d'autres informations du club selon vos besoins -->
+    </div>
+    <h1>{{club.name}}'s events</h1>
+    <div class="club-grid">
+        <!-- Utilisez *ngFor pour parcourir les clubs et utiliser le composant ClubCardComponent -->
+        <div *ngFor="let event of events; let i = index" class="mini-event-card" [ngClass]="{'last-in-row': (i + 1) % 3 === 0}">
+            <app-minieventcard [event]="event"></app-minieventcard>
+        </div>
+    </div>
+</body>
+</html>

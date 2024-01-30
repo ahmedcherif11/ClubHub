@@ -14,15 +14,15 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- Logo de l'événement avec la classe CSS personnalisée -->
-                <img src="{{ event.path }}" alt="Logo de l'événement" class="img-fluid mb-3 limited-logo">
+                <img src="{{ event.logo_path }}" alt="Logo de l'événement" class="img-fluid mb-3 limited-logo">
             </div>
             <div class="col-md-6">
                 <!-- Détails de l'événement -->
                 <h2>{{ event.name | uppercase }}</h2>
                 <p><strong>Event's description:</strong> {{ event.description }}</p>
-                <p><strong>Number of places:</strong> {{ event.nbrOfParticpants }}</p>
+                <p><strong>Number of places:</strong> {{ event.places }}</p>
                 <p><strong>Event's Date:</strong> {{ event.date | date:'dd MMMM yyyy' }}</p>
-                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Location:</strong> {{ event.place }}</p>
                 <p><strong>Organized by:</strong> <span *ngFor="let club of clubs; let last = last"> {{ club.name }}{{ !last ? ', ' : '' }}</span></p>
 
      
@@ -32,15 +32,15 @@
         <div class="row mt-3">
             <div class="col-md-4">
                 <!-- Photo 1 -->
-                <img src={{event.photos[0]}} alt="Photo 1" class="img-fluid mb-3  Photo">
+                <img src={{event.image1_path}} alt="Photo 1" class="img-fluid mb-3  Photo">
             </div>
             <div class="col-md-4">
                 <!-- Photo 2 -->
-                <img src={{event.photos[1]}} alt="Photo 2" class="img-fluid mb-3 Photo">
+                <img src={{event.image2_path}} alt="Photo 2" class="img-fluid mb-3 Photo">
             </div>
             <div class="col-md-4">
                 <!-- Photo 3 -->
-                <img src={{event.photos[2]}} alt="Photo 3" class="img-fluid mb-3 Photo">
+                <img src={{event.image3_path}} alt="Photo 3" class="img-fluid mb-3 Photo">
             </div>
         </div>
 

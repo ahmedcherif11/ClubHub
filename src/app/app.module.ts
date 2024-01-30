@@ -22,6 +22,8 @@ import { ClubCardComponent } from './layouts/club-card/club-card.component';
 import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
+import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
+import { MinieventcardComponent } from './layouts/minieventcard/minieventcard.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { LoginUserComponent } from './pages/login-user/login-user.component';
     CreatePostComponent,
     BlogComponent,
     LoginUserComponent,
+    ProfilclubComponent,
+    MinieventcardComponent,
   
 
   ],
