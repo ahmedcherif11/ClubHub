@@ -4,3 +4,9 @@
   padding-bottom: 130px;
   background-color: var(--primary-color);
 }
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+}

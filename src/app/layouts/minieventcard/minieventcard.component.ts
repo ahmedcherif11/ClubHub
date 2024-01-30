@@ -13,9 +13,10 @@ export class MinieventcardComponent {
   ngOnInit(): void {
   console.log(this.event);
   }
+
   detail() {
     console.log(this.event.id);
-    const link=['event', this.event.id];
+    const link=['events', this.event.id];
     this.router.navigate(link);
     
   }

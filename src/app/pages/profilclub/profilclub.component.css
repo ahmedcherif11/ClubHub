@@ -30,3 +30,40 @@ header {
     margin-top: 20px;
     text-align: center;
 }
+/* In your component's CSS or global style */
+
+.event-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .event-grid-container {
+    max-width: 1200px; /* Adjust as needed */
+    padding: 0 10px; /* Add padding to the container */
+    margin: auto;
+  }
+  
+  .event-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Center the cards horizontally */
+  }
+  
+  .row.justify-center {
+    justify-content: center; /* Center the last row */
+  }
+  
+  .col-md-4 {
+    width: calc(33.33% - 20px); /* Adjust width and margin as needed */
+    margin: 10px;
+    box-sizing: border-box; /* Ensure that padding and borders are included in the width */
+  }
+  
+  /* Media query to handle responsiveness */
+  @media (max-width: 767px) {
+    .col-md-4 {
+      width: calc(50% - 20px);
+    }
+  }
+  
