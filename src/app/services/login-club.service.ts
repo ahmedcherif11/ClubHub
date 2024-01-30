@@ -48,6 +48,16 @@ getClubDataFromToken(){
 
 
 }
+getClubIDFromToken(): any {
+
+  let token = localStorage.getItem('token');
+  if (token) {
+    const decodedToken = jwt_decode.jwtDecode(token) as { [key: string]: string };
+    return decodedToken['id'];
+
+  }
+  return null;
+}
 
 
 
