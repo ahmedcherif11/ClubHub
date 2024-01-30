@@ -18,7 +18,7 @@ export class PostService {
     this.posts=[]
    }
 
-   url=''
+   url='http://localhost:300/post'
    create(postData: any): Observable<post[]> {
     const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') };
     return this.http.post<post[]>(this.url + '/add', postData, { headers });
@@ -32,6 +32,9 @@ export class PostService {
   }
   
 
-
+  addlike(id: number): Observable<post[]> {
+    const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') };
+    return this.http.post<post[]>(this.url + `/${id}`+'/like', {}, { headers });
+  }
 
 }

@@ -14,10 +14,10 @@ export class LoginClubService {
 
   constructor(private http:HttpClient) {  }
 
-   private url='http://localhost:3000/users' ;
+   private url='http://localhost:3000/club' ;
 
   onSignUpClub(club: any){
-    return this.http.post(this.url ,club);
+    return this.http.post(this.url ='/signup',club);
   }
 
   onLoginClub(club: any){
