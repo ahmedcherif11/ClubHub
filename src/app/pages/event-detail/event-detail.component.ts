@@ -38,7 +38,12 @@ export class EventDetailComponent {
     );
   }
   participer() {
-    // Logique pour participer à l'événement
-    console.log('Participating...');
+  this.eventservice.participate(this.event.id).subscribe(
+    (response) => {console.log("participating ....");
+                   },
+    (error) => {console.log("error");}
+
+    );
+  
   }
 }
