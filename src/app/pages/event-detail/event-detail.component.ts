@@ -4,12 +4,17 @@ import { Club } from 'src/app/model/Club';
 import { Event } from 'src/app/model/Event';
 import { ClubserviceService } from 'src/app/services/clubservice.service';
 import { ServiceeventService } from 'src/app/services/serviceevent.service';
+import { ToastrService } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @Component({
   selector: 'app-event-detail',
   templateUrl: './event-detail.component.html',
   styleUrls: ['./event-detail.component.css']
+  
 })
 export class EventDetailComponent {
   event!: Event;  
@@ -17,7 +22,8 @@ export class EventDetailComponent {
   constructor ( private activatedRoute: ActivatedRoute,
     private router: Router,
     private eventservice: ServiceeventService,
-    private clubserv: ClubserviceService,){}
+    private clubserv: ClubserviceService,
+    private toastr: ToastrService,){}
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(
@@ -38,7 +44,13 @@ export class EventDetailComponent {
     );
   }
   participer() {
-    // Logique pour participer à l'événement
-    console.log('Participating...');
+  this.eventservice.participate(this.event.id).subscribe(
+    (response) => {console.log("participating ....");
+                   },
+    (error) => {if(this.event.places==0) this.toastr.error("Plus de places disponibles" );
+                else this.toastr.error("Vous êtes déja inscrit" );}
+
+    );
+  
   }
 }

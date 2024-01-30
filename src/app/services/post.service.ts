@@ -18,7 +18,7 @@ export class PostService {
     this.posts=[]
    }
 
-   url='http://localhost:300/post'
+   url='http://localhost:3000/post'
    create(postData: any): Observable<post[]> {
     const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') };
     return this.http.post<post[]>(this.url + '/add', postData, { headers });

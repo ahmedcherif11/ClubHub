@@ -24,6 +24,10 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
 import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
 import { MinieventcardComponent } from './layouts/minieventcard/minieventcard.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 @NgModule({
   declarations: [
@@ -57,6 +61,9 @@ import { MinieventcardComponent } from './layouts/minieventcard/minieventcard.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule.forRoot(), 
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

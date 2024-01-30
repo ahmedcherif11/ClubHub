@@ -6,17 +6,16 @@ export class Event {
     description:string;
     place:string;
     date:Date;
-
     logo_path:string;
     image1_path :string;
     image2_path :string;
     image3_path :string;
     places:number;
-    orgonizerID:number;
+    organizer:any;
 
 
   
-    constructor(id=0, name="", description="", place="", date=new Date(), logo_path='', image1_path='', image2_path='', image3_path='', places=0, orgonizerID=0) {
+    constructor(id=0, name="", description="", place="", date=new Date(), logo_path='', image1_path='', image2_path='', image3_path='', places=0) {
       this.id = id;
       this.name = name;
       this.description = description;
@@ -27,7 +26,5 @@ export class Event {
       this.image2_path = image2_path;
       this.image3_path = image3_path;
       this.places = places;
-      this.orgonizerID = orgonizerID;
-
     }
   }

@@ -19,9 +19,12 @@ export class NavbarComponent implements OnInit {
   public isLoggedInUser(): boolean {
     return this._authUser.isLoggedInUser();
   }
-
+  public ClubId(): number {
+    return this._authClub.getClubIDFromToken();
+  }
 
   ngOnInit(): void {
+
   }
    
 

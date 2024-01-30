@@ -4,6 +4,7 @@ import { Club } from '../model/Club';
 import { ClubserviceService } from './clubservice.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import * as jwt_decode from 'jwt-decode';
 
 const API_LINK = 'http://localhost:3000/event';
 
@@ -33,5 +34,12 @@ export class ServiceeventService {
   getLatestEvents(): Observable<Event[]> {
     const headers = { 'Authorization': 'Bearer ' + this.token };
     return this.http.get<Event[]>('http://localhost:3000/event/lastEvents', { headers });
+  }
+
+  participate(id:number) {
+    
+    console.log(this.token);
+    const headers = { 'Authorization': 'Bearer ' + this.token };
+    return this.http.post('http://localhost:3000/event/Participate'+ `/${id}`,{}, { headers });
   }
 }
