@@ -29,22 +29,17 @@ export class LoginClubComponent implements OnInit {
     password: '',
   }
 
+  loginFailed: boolean = false;
+  signupFailed: boolean = false;
+  currentForm: string = 'signIn';
+
+
+
+
 constructor(private _club: LoginClubService,private router : Router) {}
  
  ngOnInit(): void {}
 
-  onSignUpClub() {
-       
-  this._club.onSignUpClub(this.club)
-  .subscribe(
-    res=>{
-      this.router.navigate(['/clublogin']);
-    },
-    err=>{
-      console.log(err);
-    }
-  )
-  }
 
 
 
@@ -66,8 +61,42 @@ constructor(private _club: LoginClubService,private router : Router) {}
         
       }
     );
+
+
+    this.loginFailed = true;
   
   }
+
+
+
+  onSignUpClub() {
+       
+    this._club.onSignUpClub(this.club)
+    .subscribe(
+      res=>{
+        this.router.navigate(['/clublogin']);
+      },
+      err=>{
+        console.log(err);
+      }
+    );
+    this.signupFailed = true;
+    }
+  
+
+    showSignInForm() {
+      this.currentForm = 'signIn';
+     
+    }
+  
+    showSignUpForm() {
+      this.currentForm = 'signUp';
+    
+    }
+
+
+
+
   
 }
 
