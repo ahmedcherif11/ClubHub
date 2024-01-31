@@ -17,6 +17,9 @@ export class LoginUserService {
 
   onLogin(user: any){
     return this.http.post(this.url +'/login',user);
+    let token =localStorage.getItem('token');
+    console.log(token);
+
   }
 
 

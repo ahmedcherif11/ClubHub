@@ -45,6 +45,6 @@ export class PostService {
 
   getLatestPosts(): Observable<post[]> {
     const headers = { 'Authorization': 'Bearer ' + this.token };
-    return this.http.get<post[]>('http://localhost:3000/event/lastEvents', { headers });
+    return this.http.get<post[]>('http://localhost:3000/post/lastPosts', { headers });
   }
 }
