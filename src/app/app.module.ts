@@ -28,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListeParticipantComponent } from './pages/liste-participant/liste-participant.component';
 import { UserItemComponent } from './layouts/user-item/user-item.component';
+import { AddeventComponent } from './pages/addevent/addevent.component';
 
 
 
@@ -56,6 +57,7 @@ import { UserItemComponent } from './layouts/user-item/user-item.component';
     MinieventcardComponent,
     ListeParticipantComponent,
     UserItemComponent,
+    AddeventComponent,
   
 
   ],
