@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Club } from 'src/app/model/Club';
 import { Event } from 'src/app/model/Event';
 import { ClubserviceService } from 'src/app/services/clubservice.service';
+import { LoginClubService } from 'src/app/services/login-club.service';
 import { ServiceeventService } from 'src/app/services/serviceevent.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class ProfilclubComponent {
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private eventservice: ServiceeventService,
-    private clubserv: ClubserviceService,) {}
+    private clubserv: ClubserviceService,private _authClub :LoginClubService){}
+   
   ngOnInit() {
     this.activatedRoute.params.subscribe(
       (params) => {
@@ -44,5 +46,9 @@ export class ProfilclubComponent {
       }
     );
   }
-
+  public isLoggedInClub(): boolean {
+    const id=this._authClub.getClubIDFromToken();
+    return( this._authClub.isLoggedInClub() && id==this.club.id) ;
+  }
+  create_event(){}
 }
