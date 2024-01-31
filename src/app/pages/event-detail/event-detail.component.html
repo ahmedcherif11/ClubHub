@@ -48,11 +48,17 @@
             <div class="col-md-12 text-center">
                 <!-- Participate button -->
                 <button class="btn btn-primary btn-lg btn-dark" (click)="participer()">Participate</button>
-                <button class="btn btn-primary btn-lg btn-dark" (click)="participer()">show participants</button>
-
+            </div>
+            <div class="col-md-12 text-center mt-3">
+                <!-- Add some space here -->
+            </div>
+            <div class="col-md-12 text-center">
+                <!-- Back button -->
+                <button *ngIf="isLoggedInClub()" class="btn btn-primary btn-lg btn-dark" (click)="show_liste()">show participants</button>
             </div>
         </div>
-    </div>
+        </div>
+    
 
     <!-- Inclure Bootstrap JS (assurez-vous d'ajuster le chemin selon votre configuration) -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

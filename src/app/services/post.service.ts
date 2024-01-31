@@ -8,8 +8,8 @@ import { post } from 'src/app/model/post';
   providedIn: 'root'
 })
 export class PostService {
-  token = localStorage.getItem("token"); 
-
+ 
+  token: string | null = localStorage.getItem('token');
 
 
   private posts :post[];
@@ -17,6 +17,9 @@ export class PostService {
 
     this.posts=[]
    }
+
+
+  
 
    url='http://localhost:3000/post'
    create(postData: any): Observable<post[]> {
@@ -38,4 +41,10 @@ export class PostService {
     return this.http.post<post[]>(this.url + `/${id}`+'/like', {}, { headers });
   }
 
+
+
+  getLatestPosts(): Observable<post[]> {
+    const headers = { 'Authorization': 'Bearer ' + this.token };
+    return this.http.get<post[]>('http://localhost:3000/event/lastEvents', { headers });
+  }
 }

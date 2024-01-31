@@ -15,28 +15,41 @@ import { EventDetailComponent } from './pages/event-detail/event-detail.componen
 import { BlogComponent } from './pages/blog/blog.component';
 import { LoginUserComponent } from './pages/login-user/login-user.component';
 import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
+import { ListeParticipantComponent } from './pages/liste-participant/liste-participant.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
 {path :'login' , component:MainLoginComponent},
 {path:'clublogin', component:  LoginClubComponent},
 {path:'userlogin', component: LoginUserComponent},
-{path :'home' , component: HomeComponent},
-{path :'post' , component:SinglePostComponent},
-{path :'contact' , component:ContactUsComponent},
+{path :'home' , component: HomeComponent ,
+canActivate: [authGuard]},
+{path :'post' , component:SinglePostComponent,
+canActivate: [authGuard]},
+{path :'contact' , component:ContactUsComponent,
+canActivate: [authGuard]},
 {path :'club' ,children:[
    {path : '' ,component:AllClubsComponent},
     {path : ':id' ,component:ProfilclubComponent},
-]},
+],
+canActivate: [authGuard]},
 {path :'events' , children: [
   {path: '', component: EventsComponent},
   {path: ':id', component: EventDetailComponent},
-]},
-{path :'blog' , component:BlogComponent},
-{path :'term-conditions' , component:TermsAndConditionsComponent},
-{path :'footer' , component:FooterComponent},
-{path :'header' , component:HeaderComponent},
-{path :'navbar' , component:NavbarComponent},
+  {path: 'participants/:id', component: ListeParticipantComponent},
+],
+canActivate: [authGuard]},
+{path :'blog' , component:BlogComponent,
+canActivate: [authGuard]},
+{path :'term-conditions' , component:TermsAndConditionsComponent,
+canActivate: [authGuard]},
+{path :'footer' , component:FooterComponent,
+canActivate: [authGuard]},
+{path :'header' , component:HeaderComponent,
+canActivate: [authGuard]},
+{path :'navbar' , component:NavbarComponent,
+canActivate: [authGuard]},
 
 
 

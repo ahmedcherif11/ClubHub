@@ -30,8 +30,6 @@ header {
     margin-top: 20px;
     text-align: center;
 }
-/* In your component's CSS or global style */
-
 .event-container {
     display: flex;
     flex-direction: column;
@@ -47,11 +45,8 @@ header {
   .event-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Center the cards horizontally */
-  }
-  
-  .row.justify-center {
-    justify-content: center; /* Center the last row */
+    justify-content: center; /* This will center the cards */
+    gap: 10px; /* This will ensure space between the cards */
   }
   
   .col-md-4 {
@@ -66,4 +61,4 @@ header {
       width: calc(50% - 20px);
     }
   }
-  
+

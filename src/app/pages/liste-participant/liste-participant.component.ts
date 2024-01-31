@@ -1,25 +1,21 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Club } from 'src/app/model/Club';
 import { Event } from 'src/app/model/Event';
+import { User } from 'src/app/model/User';
 import { ClubserviceService } from 'src/app/services/clubservice.service';
-import { ServiceeventService } from 'src/app/services/serviceevent.service';
-import { ToastrService } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser'
 import { LoginClubService } from 'src/app/services/login-club.service';
-
-
+import { ServiceeventService } from 'src/app/services/serviceevent.service';
 
 @Component({
-  selector: 'app-event-detail',
-  templateUrl: './event-detail.component.html',
-  styleUrls: ['./event-detail.component.css']
-  
+  selector: 'app-liste-participant',
+  templateUrl: './liste-participant.component.html',
+  styleUrls: ['./liste-participant.component.css']
 })
-export class EventDetailComponent {
+export class ListeParticipantComponent{
   event!: Event;  
-  clubs: Club[] = []; // Initialisez le tableau ici
+  users: User[] = []; // Initialisez le tableau ici
   constructor ( private activatedRoute: ActivatedRoute,
     private router: Router,
     private eventservice: ServiceeventService,
@@ -40,6 +36,8 @@ export class EventDetailComponent {
       this.eventservice.getEventById(params['id']).subscribe(
             (response) => {
               this.event = response;
+              this.users=this.event.participants;
+              console.log(this.users);
             },
           );
         console.log(this.eventservice.getEventById(1));
@@ -48,18 +46,5 @@ export class EventDetailComponent {
       }
       }
     );
-  }
-  participer() {
-  this.eventservice.participate(this.event.id).subscribe(
-    (response) => {console.log("participating ....");
-                   },
-    (error) => {if(this.event.places==0) {this.toastr.error("Plus de places disponibles" );}
-                else this.toastr.error("Vous êtes déja inscrit" );}
-
-    );
-  
-  }
-  show_liste () {
-    this.router.navigate(['events', 'participants', this.event.id]);
   }
 }
