@@ -115,18 +115,19 @@
 <div class="login-html">
 
 		<!-- Radio button for Sign In -->
-		<input id="tab-1" type="radio" name="tab" class="sign-in" (click)="showSignInForm()" [checked]="currentForm === 'signIn'">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" (click)="showSignInClubForm()" [checked]="currentForm === 'signInClub'">
 		<label for="tab-1" class="tab">Sign In</label>
 
 		<!-- Radio button for Sign Up -->
-		<input id="tab-2" type="radio" name="tab" class="sign-up-club" (click)="showSignUpForm()" [checked]="currentForm === 'signUp'">
+		<input id="tab-2" type="radio" name="tab" class="sign-up-club" (click)="showSignUpClubForm()" [checked]="currentForm === 'signUpClub'">
 		<label for="tab-2" class="tab">Sign Up As A Club</label>
 
 	
 		<!-- Login Club -->
 	<div class="login-form">
-		<div class="sign-in-htm" *ngIf="currentForm === 'signIn'">
-			<form #loginForm="ngForm" (ngSubmit)="onLoginClub()">
+
+		<div class="sign-in-htm" *ngIf="currentForm === 'signInClub'">
+			<form #loginClubForm="ngForm" (ngSubmit)="onLoginClub()">
 
 				<div class="group">
 					<label for="username" class="label">Username</label>
@@ -146,11 +147,13 @@
 						[(ngModel)]="club_log.password" #password="ngModel" required minlength="5">
 					<div *ngIf="password.invalid && password.touched" class="error">
 					<div *ngIf="password.errors?.['required']">Password is required.</div>	
+
+
 					</div>
 				</div>
 		
 				<div class="group">
-					<input type="submit" class="button" value="Sign In" [disabled]="loginForm.invalid">
+					<input (click)="onLoginClub()" type="submit" class="button" value="Sign In" [disabled]="loginClubForm.invalid">
 				</div>
 		
 				
@@ -165,11 +168,11 @@
 
 
 
-		<!-- ... sign-up form  ... -->
+		<!-- ... sign-up Club form  ... -->
 
 	
-		<div class="sign-up-htm" *ngIf="currentForm === 'signUp'">
-			<form #signUpForm="ngForm" (ngSubmit)="onSignUpClub()">
+		<div class="sign-up-htm" *ngIf="currentForm === 'signUpClub'">
+			<form #signUpClubForm="ngForm" (ngSubmit)="onSignUpClub()">
 
 					<div class="group">
 						<label for="clubname" class="label">Club Name</label>
@@ -230,7 +233,7 @@
 					</div>
 				
 					<div class="group">
-					<input type="submit" class="button" value="Sign Up As A Club" [disabled]="!clubname.valid || !creationdate.valid || !university.valid || !field.valid || !username1.valid || !password1.valid">
+					<input (click)="onSignUpClub()"  type="submit" class="button" value="Sign Up As A Club" [disabled]="signUpClubForm.invalid">
 					</div>
 				
 				

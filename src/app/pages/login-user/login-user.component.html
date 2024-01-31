@@ -1,3 +1,7 @@
+
+
+<!--
+
 <div class="login-wrap">
 
 
@@ -6,7 +10,7 @@
 
 		<input id="tab-2" type="radio" name="tab" class="sign-up" ><label for="tab-2" class="tab">Sign Up </label>
 
-        <!--Login user -->
+     
 		<div class="login-form">
 			<div class="sign-in-htm">
 
@@ -43,7 +47,6 @@
 
 
 
-			<!-- Sign up as a n user -->
 		
 				<div class="sign-up-htm">
 		
@@ -82,6 +85,154 @@
 				
 			
 			</div>
+        </div>
+    </div>	
+</div>
+-->
+
+
+
+
+
+<div class="login-wrap">
+
+
+	<div class="login-html">
+
+
+        <!-- Radio button for Sign In -->
+		<input id="tab-1" type="radio" name="tab" class="sign-in" (click)="showSignInForm()" [checked]="currentForm === 'signIn'">
+		<label for="tab-1" class="tab">Sign In</label>
+
+		<!-- Radio button for Sign Up -->
+		<input id="tab-2" type="radio" name="tab" class="sign-up" (click)="showSignUpForm()" [checked]="currentForm === 'signUp'">
+		<label for="tab-2" class="tab">Sign Up </label>
+
+
+
+
+
+          <!-- Login User -->
+		<div class="login-form">
+			<div class="sign-in-htm" *ngIf="currentForm === 'signIn'">
+				<form #loginForm="ngForm" (ngSubmit)="onlogin()">
+	
+				
+				
+				<div class="group">
+					<label for="username" class="label">Username</label>
+					<input name="username" id="username" type="text" class="input"
+						[(ngModel)]="user_log.username" #username="ngModel" required>
+					<div  *ngIf="username.invalid && username.touched" class="error">
+					Username is required.
+					</div>
+				</div>
+
+
+
+
+
+				<div class="group">
+					<label for="password" class="label">Password</label>
+					<input name="password" id="password" type="password" class="input" data-type="password"
+						[(ngModel)]="user_log.password" #password="ngModel" required minlength="5">
+					<div *ngIf="password.invalid && password.touched" class="error">	
+					<div *ngIf="password.errors?.['required']">Password is required.</div>	
+					</div>
+				</div>
+		
+
+
+
+			
+				<div class="group">
+					<input (click)=" onlogin()"  type="submit" class="button" value="Sign In" [disabled]="loginForm.invalid">
+				</div>
+				 
+				<div *ngIf="loginFailed" class="error">
+					Incorrect username or password.
+				</div>
+
+			  </form>
+
+
+			</div>
+      
+
+
+
+
+
+
+		       <!-- ... sign-up  form  ... -->
+		
+			   <div class="sign-up-htm" *ngIf="currentForm === 'signUp'">
+				<form #signUpForm="ngForm" (ngSubmit)="onSignUp()">
+	
+
+					<div class="group">
+						<label for="firstname" class="label" required>First Name</label>
+						<input [(ngModel)]="user.firstname"  name="firstname" id="firstname" type="text" class="input" required #firstname="ngModel">
+
+						<div *ngIf="firstname.touched && firstname.invalid" class="error-message">
+							Firstname  is required.
+						</div>
+					</div>
+
+
+
+
+					<div class="group">
+						<label for="lastname" class="label" required>Last Name</label>
+						<input [(ngModel)]="user.lastname"  name="lastname" id="lastname" type="text" class="input"  required #lastname="ngModel">
+
+						<div *ngIf="lastname.touched && lastname.invalid" class="error-message">
+							Lastname is required.
+						</div>
+					</div>
+
+
+
+					<div class="group">
+						<label for="university" class="label" required>University</label>
+						<input [(ngModel)]="user.university" name="university" id="university" type="text" class="input" required #university="ngModel">
+						<div *ngIf="university.touched && university.invalid" class="error-message">
+							University is required.
+						</div>
+					</div>
+		        
+
+
+					<div class="group">
+						<label for="username1" class="label" required>Username</label>
+						<input [(ngModel)]="user.username" name="username1" id="username1" type="text" class="input" required #username1="ngModel">
+						<div *ngIf="username1.touched && username1.invalid" class="error-message">
+							Username is required.
+						</div>
+					</div>
+
+
+
+
+					<div class="group">
+						<label for="password1" class="label" required>Password</label>
+						<input [(ngModel)]="user.password" name="password1" id="password1" type="password" class="input" required #password1="ngModel" >
+						<div *ngIf="password1.touched && password1.invalid" class="error-message">
+							<div *ngIf="password1.errors?.['required']">Password is required.</div>
+							<div *ngIf="password1.errors?.['minlength']">Password must be at least 5 characters long.</div>
+						</div>
+					</div>
+
+
+					
+
+					<div class="group">
+						<input (click)="onSignUp()" type="submit" class="button" value="Sign Up" [disabled]="signUpForm.invalid">
+					</div>
+				
+				
+	
+		    </form>
         </div>
     </div>	
 </div>

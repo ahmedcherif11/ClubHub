@@ -31,32 +31,29 @@ export class LoginUserComponent implements OnInit {
     username: '',
     password: ''
   }
+
+  loginFailed: boolean = false;
+  signupFailed: boolean = false;
+  currentForm: string = 'signIn';
+
+
+
+
+
+
+
+
   
 constructor(private _user: LoginUserService,private router : Router){}
 
 ngOnInit(): void {}
 
 
-  onSignUp() {
-   
-  this._user.onSignUp(this.user)
-  .subscribe(
-    res=>{
-      this.router.navigate(['/userlogin']);
-    },
-    err=>{
-      console.log(err);
-    }
-  )
-  }
-
 
   token:any;
 
 
-  onlogin() {  
-    
-    
+  onlogin() {     
   this._user.onLogin(this.user_log)
   .subscribe(
     res=>{
@@ -72,10 +69,34 @@ ngOnInit(): void {}
       
     }
   );
+  this.loginFailed = true;
 
 }
 
 
+onSignUp() {
+   
+  this._user.onSignUp(this.user)
+  .subscribe(
+    res=>{
+      this.router.navigate(['/userlogin']);
+    },
+    err=>{
+      console.log(err);
+    }
+  );
+  this.signupFailed = true;
+  }
+
+  showSignInForm() {
+    this.currentForm = 'signIn';
+   
+  }
+
+  showSignUpForm() {
+    this.currentForm = 'signUp';
+  
+  }
 
 
   

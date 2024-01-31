@@ -23,11 +23,6 @@ export class SinglePostComponent {
     
   }
 
-  toggleLike() {
-    this.isLiked = !this.isLiked;
-    this.likeCount += this.isLiked ? 1 : -1;
-  }
-
 
 
   addLike() {
