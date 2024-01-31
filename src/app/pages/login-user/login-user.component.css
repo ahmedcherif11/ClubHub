@@ -126,4 +126,15 @@ body {
     opacity: 1;
 }
 
+.error-message {
+  color: #D8000C; /* A shade that stands out but is not too bright */
+  background-color: #FFD2D2; /* A light, soft red/pink that matches the error color */
+  border: 1px solid #D8000C; /* A solid border that's not too thick */
+  padding: 10px 20px; /* Appropriate padding for the content */
+  margin: 10px 0; /* Some margin to separate from other elements */
+  border-radius: 8px; /* Soft rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
+  font-size: 0.9em; /* A font size that's not too large */
+  text-align: center; /* Center the text if it fits the design */
+}
 

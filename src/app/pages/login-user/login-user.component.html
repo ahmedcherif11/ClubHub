@@ -123,7 +123,7 @@
 					<label for="username" class="label">Username</label>
 					<input name="username" id="username" type="text" class="input"
 						[(ngModel)]="user_log.username" #username="ngModel" required>
-					<div  *ngIf="username.invalid && username.touched" class="error">
+					<div  *ngIf="username.invalid && username.touched" class="error-message">
 					Username is required.
 					</div>
 				</div>
@@ -136,7 +136,7 @@
 					<label for="password" class="label">Password</label>
 					<input name="password" id="password" type="password" class="input" data-type="password"
 						[(ngModel)]="user_log.password" #password="ngModel" required minlength="5">
-					<div *ngIf="password.invalid && password.touched" class="error">	
+					<div *ngIf="password.invalid && password.touched" class="error-message">	
 					<div *ngIf="password.errors?.['required']">Password is required.</div>	
 					</div>
 				</div>
@@ -146,10 +146,10 @@
 
 			
 				<div class="group">
-					<input (click)=" onlogin()"  type="submit" class="button" value="Sign In" [disabled]="loginForm.invalid">
+					<input (click)=" onlogin()"  type="submit" class="button" value="Sign In" [disabled]="loginForm.touched && loginForm.invalid">
 				</div>
 				 
-				<div *ngIf="loginFailed" class="error">
+				<div *ngIf="loginFailed" class="error-message">
 					Incorrect username or password.
 				</div>
 
@@ -227,7 +227,10 @@
 					
 
 					<div class="group">
-						<input (click)="onSignUp()" type="submit" class="button" value="Sign Up" [disabled]="signUpForm.invalid">
+						<input (click)="onSignUp()" type="submit" class="button" value="Sign Up" [disabled]=" signUpForm.touched &&  signUpForm.invalid">
+					</div>
+					<div *ngIf="signupFailed" class="error-message">
+						Please fill in the form.
 					</div>
 				
 				
