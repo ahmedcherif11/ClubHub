@@ -133,7 +133,7 @@
 					<label for="username" class="label">Username</label>
 					<input name="username" id="username" type="text" class="input"
 						[(ngModel)]="club_log.username" #username="ngModel" required>
-					<div  *ngIf="username.invalid && username.touched" class="error">
+					<div  *ngIf="username.invalid && username.touched" class="error-message">
 					Username is required.
 					</div>
 				</div>
@@ -145,7 +145,7 @@
 					<label for="password" class="label">Password</label>
 					<input name="password" id="password" type="password" class="input" data-type="password"
 						[(ngModel)]="club_log.password" #password="ngModel" required minlength="5">
-					<div *ngIf="password.invalid && password.touched" class="error">
+					<div *ngIf="password.invalid && password.touched" class="error-message">
 					<div *ngIf="password.errors?.['required']">Password is required.</div>	
 
 
@@ -153,11 +153,11 @@
 				</div>
 		
 				<div class="group">
-					<input (click)="onLoginClub()" type="submit" class="button" value="Sign In" [disabled]="loginClubForm.invalid">
+					<input (click)="onLoginClub()" type="submit" class="button" value="Sign In" [disabled]="loginClubForm.invalid  && loginClubForm.touched">
 				</div>
 		
 				
-				<div *ngIf="loginFailed" class="error">
+				<div *ngIf="loginClubFailed" class="error-message">
 					Incorrect username or password.
 				</div>
 			</form>
@@ -233,7 +233,11 @@
 					</div>
 				
 					<div class="group">
-					<input (click)="onSignUpClub()"  type="submit" class="button" value="Sign Up As A Club" [disabled]="signUpClubForm.invalid">
+					<input (click)="onSignUpClub()"  type="submit" class="button" value="Sign Up As A Club" [disabled]="signUpClubForm.touched &&signUpClubForm.invalid">
+					</div>
+					
+					<div *ngIf="signupClubFailed" class="error-message">
+						Please fill in the form.
 					</div>
 				
 				

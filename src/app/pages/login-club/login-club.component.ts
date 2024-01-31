@@ -29,8 +29,8 @@ export class LoginClubComponent implements OnInit {
     password: '',
   }
 
-  loginFailed: boolean = false;
-  signupFailed: boolean = false;
+  loginClubFailed: boolean = false;
+  signupClubFailed: boolean = false;
   currentForm: string = 'signInClub';
 
 
@@ -61,7 +61,7 @@ constructor(private _club: LoginClubService,private router : Router) {}
         
       }
     );
-    this.loginFailed = true;
+    this.loginClubFailed = true;
   
   }
 
@@ -78,7 +78,7 @@ constructor(private _club: LoginClubService,private router : Router) {}
         console.log(err);
       }
     );
-    this.signupFailed = true;
+    this.signupClubFailed = true;
     }
   
 
