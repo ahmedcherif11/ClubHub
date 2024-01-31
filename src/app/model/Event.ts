@@ -12,6 +12,7 @@ export class Event {
     image3_path :string;
     places:number;
     organizer:any;
+    participants:any;
 
 
   

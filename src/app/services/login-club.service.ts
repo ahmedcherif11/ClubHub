@@ -59,7 +59,14 @@ getClubIDFromToken(): any {
   return null;
 }
 
+IsLoggedIn()
+ { 
 
+  return localStorage.getItem('token')!=null;
+
+
+
+ }
 
 }
 

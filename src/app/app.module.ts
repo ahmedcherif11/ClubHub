@@ -26,6 +26,8 @@ import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
 import { MinieventcardComponent } from './layouts/minieventcard/minieventcard.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListeParticipantComponent } from './pages/liste-participant/liste-participant.component';
+import { UserItemComponent } from './layouts/user-item/user-item.component';
 
 
 
@@ -52,6 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginUserComponent,
     ProfilclubComponent,
     MinieventcardComponent,
+    ListeParticipantComponent,
+    UserItemComponent,
   
 
   ],

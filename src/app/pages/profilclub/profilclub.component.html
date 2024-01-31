@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil du {{club.name}}</title>
-
-</head>
-<body>
-
-    <header>
+ <title>Profil du {{club.name}}</title>
+<header>
         <!-- Logo du club -->
         <img id="club-logo" src={{club.path}} alt="Logo du Club" style="border-radius: 50%;">
         <!-- Nom du club -->
@@ -25,16 +16,33 @@
 
 <div class="event-container">
     <h1>{{ club.name }}'s events</h1>
-    <div class="event-grid-container">
+
+    <div class="event-grid-container d-flex justify-content-center align-items-center" style="border: 1px solid black; border-radius: 10px; margin-bottom: 20px;">
       <div class="event-grid">
-        <div class="row" [ngClass]="{'justify-center': events.length % 3 !== 0}">
-          <div *ngFor="let event of events; let i = index" class="col-md-4">
+        <div class="row justify-content-center">
+          <div *ngFor="let event of events; let i = index" class="col-md-4 mb-3 d-flex justify-content-center">
             <app-minieventcard [event]="event"></app-minieventcard>
           </div>
         </div>
       </div>
     </div>
-  </div>
+    
+
+    <div class="col-md-12 text-center">
+                <!-- Back button -->
+                <button *ngIf="isLoggedInClub()" class="btn btn-primary btn-lg btn-dark" (click)="create_event()">create event</button>
+    </div>
+    
+    <!-- <div class="event-grid-container" style="border : 1px solid black">
+      <div class="event-grid">
+        <div class="row" [ngClass]="{'justify-center': events.length % 3 !== 0}" >
+          <div *ngFor="let event of events; let i = index" class="col-md-4 d-flex justify-content-center">
+            <app-minieventcard [event]="event" ></app-minieventcard>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
   
-</body>
-</html>
+
+
