@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { LoginUserService } from 'src/app/services/login-user.service';
 
 
@@ -44,7 +45,8 @@ export class LoginUserComponent implements OnInit {
 
 
   
-constructor(private _user: LoginUserService,private router : Router){}
+constructor(private _user: LoginUserService,private router : Router, private toastr: ToastrService,
+  ){}
 
 ngOnInit(): void {}
 
@@ -65,6 +67,7 @@ ngOnInit(): void {}
 
     },
     err=>{
+      this.toastr.error('Error while logging in');
       console.log(err);
       this.loginFailed = true;
 
@@ -81,9 +84,16 @@ onSignUp() {
   .subscribe(
     Response=>{
       console.log(Response);
+      this.toastr.success('User added successfully');
       this.router.navigate(['/userlogin']);
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+ 
     },
     err=>{
+      this.toastr.error('Error while adding user');
       console.log(err);
       this.signupFailed = true;
       console.log(this.user);

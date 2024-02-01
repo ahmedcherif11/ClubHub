@@ -1,3 +1,5 @@
+import { Club } from "./Club";
+
 export class User {
     id: number;
     firstName: string;
@@ -5,6 +7,7 @@ export class User {
     university: string;
     username: string;
     password: string;
+    clubs: Club[] = [];
     constructor(id = 0, firstName = "", lastName = "", university = "", username = "", password = "") {
         this.id = id;
         this.firstName = firstName;

@@ -1,3 +1,4 @@
+import { User } from "./User";
 
 export class Club {
     id :number;
@@ -7,7 +8,7 @@ export class Club {
     creationDate:Date;
     field :string;
     role: string;
-    members: any;
+    members: User[] = [];
     
     constructor(id=0, name="", path='',  description="",creationDate=new Date(), field="",role="") {
       this.id = id;

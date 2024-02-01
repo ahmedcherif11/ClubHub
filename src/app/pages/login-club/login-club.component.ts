@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { LoginClubService } from 'src/app/services/login-club.service';
 
 
@@ -36,7 +37,7 @@ export class LoginClubComponent implements OnInit {
 
 
 
-constructor(private _club: LoginClubService,private router : Router) {}
+constructor(private _club: LoginClubService,private router : Router,private toastr: ToastrService,) {}
  
  ngOnInit(): void {}
 
@@ -72,9 +73,15 @@ constructor(private _club: LoginClubService,private router : Router) {}
     this._club.onSignUpClub(this.club)
     .subscribe(
       res=>{
+        this.toastr.success('Club added successfully');
         this.router.navigate(['/clublogin']);
+
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
       },
       err=>{
+        this.toastr.error('Error while adding club');
         console.log(err);
       }
     );

@@ -52,6 +52,7 @@ export class EventDetailComponent {
   participer() {
   this.eventservice.participate(this.event.id).subscribe(
     (response) => {console.log("participating ....");
+    this.toastr.success("Vous êtes inscrit" );
                    },
     (error) => {if(this.event.places==0) {this.toastr.error("Plus de places disponibles" );}
                 else this.toastr.error("Vous êtes déja inscrit" );}

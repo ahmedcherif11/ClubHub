@@ -63,11 +63,11 @@ export class ProfilclubComponent {
     this.router.navigate(['events', 'add']);}
     become_member(){
       this.clubserv.addmember(this.club.id).subscribe(
-        (response: any) => {
+        (response) => {
           console.log(response);
           this.toastr.success('Member added successfully');
         },
-        (error: any) => {
+        (error) => {
           console.log(error);
           this.toastr.error('Error while adding member');
         }

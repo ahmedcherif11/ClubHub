@@ -156,12 +156,11 @@
     color: #000000;
     display: block;
 }
-.login-form .group .input, {
+.login-form .group .input {
     border: black solid 2px;
     padding: 15px 20px;
     border-radius: 25px;
-    background: rgba(255, 255, 255, .1);
-}
+    background: rgba(255, 255, 255, .1);}
 .login-form .group .label {
   color: #000000;
   font-size: 18px;
