@@ -21,8 +21,6 @@ export class LoginClubService {
   }
 
   onLoginClub(club: any){
-    let token =localStorage.getItem('token');
-    console.log(token);
     return this.http.post(this.url +'/login',club);
   }
 
