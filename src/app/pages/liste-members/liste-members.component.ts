@@ -42,8 +42,8 @@ export class ListeMembersComponent {
       }
     );
   }
-  delete(id1: number , id2: number){
-    this.eventservice.deleteParticipant(id1,id2).subscribe(
+  delete(id1: number ){
+    this.clubserv.deleteMember(id1).subscribe(
       (response) => {
         this.toastr.success('Participant deleted successfully');      },
       (error) => {

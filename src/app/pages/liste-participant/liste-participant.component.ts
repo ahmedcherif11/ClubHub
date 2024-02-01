@@ -52,7 +52,11 @@ export class ListeParticipantComponent{
       (response) => {
         this.toastr.success('Participant deleted successfully');      },
       (error) => {
+        console.error(this.event.organizer.id);
+        const id=this._authClub.getClubIDFromToken();
+        console.error(id);
         this.toastr.error('Error while deleting participant');
+        console.error(error);
       }
     );
   }

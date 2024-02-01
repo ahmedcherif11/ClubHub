@@ -40,6 +40,9 @@ addmember(id :number) : Observable<any>{
   
     const headers = { 'Authorization': 'Bearer '+ this.token }
     return this.http.post<Club[]>('http://localhost:3000/club/addMember'+ `/${id}`,{},{headers});// Utilisez "||" pour renvoyer une nouvelle Personne si aucune personne n'est trouvée.
-}
+}deleteMember(id1 :number) : Observable<any>{
+    const headers = { 'Authorization': 'Bearer ' + this.token };  
+    return this.http.delete<any>(API_LINK +'/removeMember'+  `/${id1}`, { headers });
+  }
 
 }

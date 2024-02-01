@@ -51,6 +51,6 @@ export class ServiceeventService {
     const headers = { 'Authorization': 'Bearer ' + this.token };
     // Your code here
   
-    return this.http.delete(API_LINK +'/UnParticipate'+ `/${id2}`+ `/${id1}`, { headers });
+    return this.http.delete<any>(API_LINK +'/UnParticipate'+ `/${id2}`+ `/${id1}`, { headers });
   }
 }
