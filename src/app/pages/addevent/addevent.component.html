@@ -1,0 +1,103 @@
+
+<div class="login-wrap">
+<div class="login-html">
+<div class="sign-up-htm" >
+    <div class="login-form">
+
+
+    <form #CreateForm="ngForm" >
+        <div class="group">
+            <label for="name" class="label" required>Event's Name</label>
+            <input [(ngModel)]="event.name"  name="name" id="name" type="text" class="input" required #name="ngModel">
+
+            <div *ngIf="name.touched && name.invalid" class="error-message">
+                name  is required.
+            </div>
+        </div>
+
+
+
+
+        <div class="group">
+            <label for="description" class="label" required>description</label>
+            <input [(ngModel)]="event.description"  name="description" id="description" type="text" class="input"  required #description="ngModel">
+
+            <div *ngIf="description.touched && description.invalid" class="error-message">
+                description is required.
+            </div>
+        </div>
+
+
+
+        <div class="group">
+            <label for="place" class="label" required>place</label>
+            <input [(ngModel)]="event.place" name="place" id="place" type="text" class="input" required #place="ngModel">
+            <div *ngIf="place.touched && place.invalid" class="error-message">
+                place is required.
+            </div>
+        </div>
+    
+
+
+        <div class="group">
+            <label for="places" class="label" required>places</label>
+            <input [(ngModel)]="event.places" name="places" id="places" type="number" class="input" required #places="ngModel">
+            <div *ngIf="places.touched && places.invalid" class="error-message">
+                places is required.
+            </div>
+        </div>
+
+
+
+
+        <div class="group">
+            <label for="logo_path" class="label" required>logo_path</label>
+            <input [(ngModel)]="event.logo_path" name="logo_path" id="logo_path" type="text" class="input" required #logo_path="ngModel" >
+            <div *ngIf="logo_path.touched && logo_path.invalid" class="error-message">
+                logo_path is required.
+            </div>
+        </div>
+
+        <div class="group">
+            <label for="image1_path" class="label" required>image1_path</label>
+            <input [(ngModel)]="event.image1_path" name="image1_path" id="image1_path" type="text" class="input" required #image1_path="ngModel" >
+            <div *ngIf="image1_path.touched && image1_path.invalid" class="error-message">
+                image1_path is required.
+            </div>
+        </div>
+
+        <div class="group">
+            <label for="image2_path" class="label" required>image2_path</label>
+            <input [(ngModel)]="event.image2_path" name="image2_path" id="image2_path" type="text" class="input" required #image2_path="ngModel" >
+            <div *ngIf="image2_path.touched && image2_path.invalid" class="error-message">
+                image2_path is required.
+            </div>
+        </div>
+
+        <div class="group">
+            <label for="image3_path" class="label" required>image3_path</label>
+            <input [(ngModel)]="event.image3_path" name="image3_path" id="image3_path" type="text" class="input" required #image3_path="ngModel" >
+            <div *ngIf="image3_path.touched && image3_path.invalid" class="error-message">
+                image3_path is required.
+            </div>
+        </div>
+
+
+
+
+        
+
+        <div class="group">
+            <input (click)="oncreate()" type="submit" class="button" value="Create event" [disabled]= "!CreateForm.valid">
+        </div>
+        <div *ngIf="!CreateForm.valid" class="error-message">
+            Please fill in the form.
+        </div>
+    
+    
+
+        </form>
+        
+    </div>
+</div>
+</div>

@@ -1,25 +1,25 @@
 <section class="container mt-5">
   <div class="col-md-12 text-center">
-    <h2> Latest Posts</h2>
+    <h2 style="font-size: 60px;"> Latest Posts</h2>
    
   </div>
   
     <div class="row"> 
       <div class="col-md mt-3">
         <div class="row">
-          <div class="col-md-2 mb-3 card-container" *ngFor="let post of posts">
-            <app-single-post [post]="post"></app-single-post> 
+          <div class="col-md-2 mb-3 card-container" style="width: 100%;" *ngFor="let post of posts">
+            <app-single-post  [post]="post"></app-single-post> 
           </div>
         </div>
       </div>
     </div>
     </section>
 
-
+<section style="background-color: #000000;color:">
 <section class="container mt-5">
 <div class="col-md-12 text-center">
-  <h2> Latest events</h2>
-  <p class="text-black">Don't miss any opportunity to treat yourself </p>
+  <h2 style="color: white;font-size:60px;"> LATEST EVENTS</h2>
+  <p  style="color: white;">Don't miss any opportunity to treat yourself </p>
 </div>
 
   <div class="row"> 
@@ -32,3 +32,4 @@
     </div>
   </div>
   </section>
+</section>

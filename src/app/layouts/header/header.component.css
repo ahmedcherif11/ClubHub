@@ -1,7 +1,38 @@
 header{
   height: 100px;
 }
-.site-logo{
-  font-size: 1.5em;
-  text-decoration: none;
+header.navbar {
+  width: 100%;
+  background-color: #800020; /* Couleur bordeaux */
+  display: flex;
+  justify-content: center; /* Centrer le contenu horizontalement */
+  align-items: center; /* Centrer le contenu verticalement */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Ajoutez d'autres styles si nécessaire */
+}
+
+.container {
+  display: flex;
+  background-color: #800020; /* Couleur bordeaux */
+
+  justify-content: center; /* Centrer le contenu du conteneur */
+  align-items: center;
+  background: transparent; /* Si nécessaire */
+
+  padding: 10px 0; /* Ajouter du padding pour augmenter la hauteur si nécessaire */
+}
+
+.site-logo img {
+  height: auto; /* Maintenir le rapport hauteur/largeur de l'image */
+  width: 230px; /* Ou la largeur que vous souhaitez pour le logo */
+  /* Ajoutez d'autres styles si nécessaire */
+  background: transparent; /* Si nécessaire */
+
+}
+.site-logo {
+  background-color: transparent; /* Ensure the background is transparent */
+  /* Other styling */
 }

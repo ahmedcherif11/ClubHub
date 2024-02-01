@@ -1,9 +1,11 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Club } from 'src/app/model/Club';
 import { Event } from 'src/app/model/Event';
 import { ClubserviceService } from 'src/app/services/clubservice.service';
 import { LoginClubService } from 'src/app/services/login-club.service';
+import { LoginUserService } from 'src/app/services/login-user.service';
 import { ServiceeventService } from 'src/app/services/serviceevent.service';
 
 @Component({
@@ -17,7 +19,11 @@ export class ProfilclubComponent {
   constructor(private activatedRoute: ActivatedRoute,
     private router: Router,
     private eventservice: ServiceeventService,
-    private clubserv: ClubserviceService,private _authClub :LoginClubService){}
+    private clubserv: ClubserviceService,
+    private _authClub :LoginClubService,
+    private _authUser :LoginUserService,   
+     private toastr: ToastrService,
+    ){}
    
   ngOnInit() {
     this.activatedRoute.params.subscribe(
@@ -50,5 +56,24 @@ export class ProfilclubComponent {
     const id=this._authClub.getClubIDFromToken();
     return( this._authClub.isLoggedInClub() && id==this.club.id) ;
   }
-  create_event(){}
+  public isLoggedInUser(): boolean {
+    return this._authUser.isLoggedInUser();
+  }
+  create_event(){
+    this.router.navigate(['events', 'add']);}
+    become_member(){
+      this.clubserv.addmember(this.club.id).subscribe(
+        (response: any) => {
+          console.log(response);
+          this.toastr.success('Member added successfully');
+        },
+        (error: any) => {
+          console.log(error);
+          this.toastr.error('Error while adding member');
+        }
+      );
+    }
+    show_participants(){
+      this.router.navigate(['club',  'members', this.club.id]);
+    }
 }

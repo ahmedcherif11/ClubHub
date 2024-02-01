@@ -12,13 +12,15 @@ export class LoginUserService {
    private url='http://localhost:3000/users' ;
 
   onSignUp(user: any){
+    console.log(user);
     return this.http.post(this.url ,user);
   }
 
   onLogin(user: any){
-    return this.http.post(this.url +'/login',user);
+    
     let token =localStorage.getItem('token');
     console.log(token);
+    return this.http.post(this.url +'/login',user);
 
   }
 

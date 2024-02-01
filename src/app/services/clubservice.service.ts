@@ -36,4 +36,10 @@ getEventsByClub(id :number) : Observable<Event[]>{
   return this.http.get<Event[]>('http://localhost:3000/event/club'+ `/${id}`,{headers});// Utilisez "||" pour renvoyer une nouvelle Personne si aucune personne n'est trouvée.
 
 }
+addmember(id :number) : Observable<any>{
+  
+    const headers = { 'Authorization': 'Bearer '+ this.token }
+    return this.http.post<Club[]>('http://localhost:3000/club/addMember'+ `/${id}`,{},{headers});// Utilisez "||" pour renvoyer une nouvelle Personne si aucune personne n'est trouvée.
+}
+
 }

@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListeParticipantComponent } from './pages/liste-participant/liste-participant.component';
 import { UserItemComponent } from './layouts/user-item/user-item.component';
 import { AddeventComponent } from './pages/addevent/addevent.component';
+import { ListeMembersComponent } from './pages/liste-members/liste-members.component';
 
 
 
@@ -58,6 +59,7 @@ import { AddeventComponent } from './pages/addevent/addevent.component';
     ListeParticipantComponent,
     UserItemComponent,
     AddeventComponent,
+    ListeMembersComponent,
   
 
   ],

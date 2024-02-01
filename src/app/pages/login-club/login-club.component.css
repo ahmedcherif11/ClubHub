@@ -1,35 +1,23 @@
-body {
-	margin: 0;
-	color: #6a6f8c;
-	background: #c8c8c8;
-	font: 600 16px/18px 'Open Sans', sans-serif;
-  }
-  
-  *,
-  *:after,
-  *:before {
-	box-sizing: border-box;
-  }
-  
-  .login-wrap {
-	width: 100%;
-	margin: auto;
-	max-width: 800px;
-	min-height: 900px;
-	position: relative;
-	box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
-  }
-  
-  .login-html {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	padding: 90px 70px 50px 70px;
-	background: rgba(40, 57, 101, .9);
-  }
-  
-  /* Hide the default radio button */
-  .login-html input[type="radio"] {
+/* Style for the buttons */
+.button {
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  border: 2px solid black; /* Black border */
+  padding: 15px 20px;
+  margin: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 25px; /* Rounded corners */
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #4d1313; /* Light grey background on hover */
+  color: rgb(255, 255, 255); /* Keep text black on hover */
+}
+.login-html input[type="radio"] {
 	position: absolute;
 	opacity: 0;
 	width: 0;
@@ -40,18 +28,64 @@ body {
   .login-html label.tab {
 	cursor: pointer;
 	padding: 10px 20px;
+  
 	display: inline-block;
-	color: white;
+	color: rgb(0, 0, 0);
 	background: transparent;
 	transition: background-color 0.3s, color 0.3s;
   }
   
   /* Change style when the radio button is checked */
   .login-html input[type="radio"]:checked + label.tab {
-	background: #1161ee;
+	background: #4d0606;
 	color: white;
-  }
   
+  }
+
+/* Style for the input fields */
+.input {
+  border: 2px solid black; /* Black border */
+  padding: 15px 20px;
+  margin-bottom: 10px; /* Spacing below each input field */
+  border-radius: 25px; /* Rounded corners */
+  color: black; /* Black text */
+  background-color: white; /* White background */
+}
+
+/* Style for the labels */
+.label {
+  color: black; /* Black text */
+}
+
+/* Error message styles */
+.error-message {
+  color: red; /* Red text for errors */
+  margin: 5px 0; /* Spacing around error messages */
+}
+
+/* Styles for the tabs at the top (Sign In, Sign Up) */
+.tab {
+  background-color: white; /* White background */
+  color: black; /* Black text */
+  border: 2px solid black; /* Black border */
+  margin: 10px;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 25px; /* Rounded corners */
+  
+  /* Center the tabs horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Active tab styles */
+.sign-in:checked + .tab,
+.sign-up:checked + .tab {
+  background-color: #1161ee; /* Blue background for active tab */
+  color: white; /* White text for active tab */
+}
   /* Default hidden content */
   .login-form .sign-in-htm,
   .login-form .sign-up-htm,
@@ -68,71 +102,67 @@ body {
 	display: block;
 	opacity: 1;
   }
-  
-
+/* Additional styling for the sign-in and sign-up forms */
 .login-form {
-    min-height: 345px;
-    position: relative;
+  min-height: 345px;
+  color: black; /* Black text */
 }
 
+/* Adjust the placement of the sign-in and sign-up forms if needed */
+.login-html {
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  border-radius: 25px; /* Rounded corners */
+  width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 90px 70px 50px 70px;
+  
+}
+
+/* Additional responsive styling if needed */
+@media (max-width: 768px) {
+  .login-wrap, .input, .button, .tab {
+    width: 90%;
+    height: auto;
+    margin: 10px auto; /* Centering */
+  }
+}
+
+/* Ensure the background covers the entire screen */
+.background-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Center the login-wrap on the screen */
+.login-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 800px; /* Adjust the height as necessary */
+  padding-top: 200px; /* Adjust the padding as necessary */
+  
+}
 .login-form .group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
-
 .login-form .group .label,
 .login-form .group .input,
 .login-form .group .button {
     width: 100%;
-    color: #fff;
+    color: #000000;
     display: block;
 }
-
-.login-form .group .input,
-.login-form .group .button {
-    border: none;
+.login-form .group .input, {
+    border: black solid 2px;
     padding: 15px 20px;
     border-radius: 25px;
     background: rgba(255, 255, 255, .1);
 }
-
-.login-form .group .button {
-    background: #1161ee;
-    color: white;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-}
-
 .login-form .group .label {
-    color: #aaa;
-    font-size: 12px;
-}
-
-/* Hide all forms by default */
-.login-form .sign-in-htm,
-.login-form .sign-up-htm,
-.login-form .sign-up-club-htm {
-    display: none;
-    opacity: 0;
-    transition: opacity .4s ease-in-out;
-}
-
-/* Show the 'Sign In' form when the 'Sign In' tab is checked */
-#tab-1:checked ~ .login-form .sign-in-htm,
-#tab-2:checked ~ .login-form .sign-up-htm,
-#tab-3:checked ~ .login-form .sign-up-club-htm {
-    display: block;
-    opacity: 1;
-}
-
-.error-message {
-  color: #D8000C; /* A shade that stands out but is not too bright */
-  background-color: #FFD2D2; /* A light, soft red/pink that matches the error color */
-  border: 1px solid #D8000C; /* A solid border that's not too thick */
-  padding: 10px 20px; /* Appropriate padding for the content */
-  margin: 10px 0; /* Some margin to separate from other elements */
-  border-radius: 8px; /* Soft rounded corners */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* A subtle shadow for depth */
-  font-size: 0.9em; /* A font size that's not too large */
-  text-align: center; /* Center the text if it fits the design */
+  color: #000000;
+  font-size: 18px;
 }

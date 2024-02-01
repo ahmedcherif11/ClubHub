@@ -20,12 +20,12 @@
   }
   
   .form-input-group input[type="text"]:focus {
-    border-color: #3d1976; /* Highlight color when input is focused */
+    border-color:  #800020;; /* Highlight color when input is focused */
     outline: none; /* Removing the default outline */
   }
   
   .form-input-group button {
-    background-color: #3d1976; /* Matching button color with your theme */
+    background-color: #800020;; /* Matching button color with your theme */
     color: #ffffff; /* White text color for the button */
     border: none; /* Removing border for the button */
     cursor: pointer; /* Cursor to pointer to indicate it's clickable */
@@ -33,7 +33,7 @@
   }
   
   .form-input-group button:hover {
-    background-color: #a6cdff; /* Darker shade on hover */
-    color: #100f0f
+    background-color: #000000; /* Darker shade on hover */
+    color: #ffffff
   }
   

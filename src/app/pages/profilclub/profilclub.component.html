@@ -43,6 +43,20 @@
       </div>
     </div>
   </div> -->
+  <div class="row mt-3">
+    <div class="col-md-12 text-center">
+        <!-- Participate button -->
+        <button *ngIf="isLoggedInUser()" class="btn btn-primary btn-lg btn-dark" (click)="become_member()">Become a member</button>
+    </div>
+    <div class="col-md-12 text-center mt-3">
+        <!-- Add some space here -->
+    </div>
+    <div class="col-md-12 text-center">
+        <!-- Back button -->
+        <button *ngIf="isLoggedInClub()" class="btn btn-primary btn-lg btn-dark" style="margin-bottom: 10px;" (click)="show_participants()">show members</button>
+    </div>
+</div>
+</div>
   
 
 

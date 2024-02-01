@@ -17,6 +17,8 @@ import { LoginUserComponent } from './pages/login-user/login-user.component';
 import { ProfilclubComponent } from './pages/profilclub/profilclub.component';
 import { ListeParticipantComponent } from './pages/liste-participant/liste-participant.component';
 import { authGuard } from './guards/auth.guard';
+import { AddeventComponent } from './pages/addevent/addevent.component';
+import { ListeMembersComponent } from './pages/liste-members/liste-members.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -30,14 +32,17 @@ canActivate: [authGuard]},
 {path :'contact' , component:ContactUsComponent,
 canActivate: [authGuard]},
 {path :'club' ,children:[
+  {path : 'members/:id' ,component: ListeMembersComponent},
    {path : '' ,component:AllClubsComponent},
     {path : ':id' ,component:ProfilclubComponent},
 ],
 canActivate: [authGuard]},
 {path :'events' , children: [
   {path: '', component: EventsComponent},
-  {path: ':id', component: EventDetailComponent},
   {path: 'participants/:id', component: ListeParticipantComponent},
+  {path: 'add', component: AddeventComponent},
+  {path: ':id', component: EventDetailComponent},
+
 ],
 canActivate: [authGuard]},
 {path :'blog' , component:BlogComponent,

@@ -1,99 +1,8 @@
 
-
-<!--
-
-<div class="login-wrap">
-
-
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-
-		<input id="tab-2" type="radio" name="tab" class="sign-up" ><label for="tab-2" class="tab">Sign Up </label>
-
-     
-		<div class="login-form">
-			<div class="sign-in-htm">
-
-
-
-				
-				<div class="group">
-					<label for="username" class="label" required>Username</label>
-					<input [(ngModel)]="user_log.username" id="username" type="text" class="input">
-				</div>
-
-
-
-				<div class="group">
-					<label for="password" class="label" required>Password</label>
-					<input [(ngModel)]="user_log.password" type="password" class="input" data-type="password">
-				</div>
-
-
-
-			
-				<div class="group">
-					<input (click)="onlogin()"  type="submit" class="button" value="Sign In">
-				</div>
-				
-             
-
-
-			</div>
-      
-
-
-
-
-
-
-		
-				<div class="sign-up-htm">
-		
-				<div class="group">
-					<label for="firstname" class="label" required>First Name</label>
-					<input [(ngModel)]="user.firstname"   id="firstname" type="text" class="input">
-				</div>
-
-				<div class="group">
-					<label for="lastname" class="label" required>Last Name</label>
-					<input [(ngModel)]="user.lastname"     id="lastname" type="text" class="input">
-				</div>
-
-				<div class="group">
-					<label for="university" class="label" required>University</label>
-					<input [(ngModel)]="user.university" id="university" type="text" class="input">
-				</div>
-		        
-				<div class="group">
-					<label for="username1" class="label" required>Username</label>
-					<input [(ngModel)]="user.username" id="username1" type="text" class="input">
-				</div>
-
-				<div class="group">
-					<label for="password1" class="label" required>Password</label>
-					<input [(ngModel)]="user.password" id="password1" type="password" class="input" >
-				</div>
-
-
-				
-
-			<div class="group">
-					<input (click)="onSignUp()" type="submit" class="button" value="Sign Up">
-				</div>
-				
-				
-			
-			</div>
-        </div>
-    </div>	
-</div>
--->
-
-
-
-
-
+<div class="background-wrap">
+    <img src="/assets/back.jpg" alt="Background">
+  </div>
+  
 <div class="login-wrap">
 
 
@@ -115,7 +24,7 @@
           <!-- Login User -->
 		<div class="login-form">
 			<div class="sign-in-htm" *ngIf="currentForm === 'signIn'">
-				<form #loginForm="ngForm" (ngSubmit)="onlogin()">
+				<form #loginForm="ngForm" >
 	
 				
 				
@@ -167,14 +76,14 @@
 		       <!-- ... sign-up  form  ... -->
 		
 			   <div class="sign-up-htm" *ngIf="currentForm === 'signUp'">
-				<form #signUpForm="ngForm" (ngSubmit)="onSignUp()">
+				<form #signUpForm="ngForm" >
 	
 
 					<div class="group">
-						<label for="firstname" class="label" required>First Name</label>
-						<input [(ngModel)]="user.firstname"  name="firstname" id="firstname" type="text" class="input" required #firstname="ngModel">
+						<label for="firstName" class="label" required>First Name</label>
+						<input [(ngModel)]="user.firstName"  name="firstName" id="firstName" type="text" class="input" required #firstName="ngModel">
 
-						<div *ngIf="firstname.touched && firstname.invalid" class="error-message">
+						<div *ngIf="firstName.touched && firstName.invalid" class="error-message">
 							Firstname  is required.
 						</div>
 					</div>
@@ -183,10 +92,10 @@
 
 
 					<div class="group">
-						<label for="lastname" class="label" required>Last Name</label>
-						<input [(ngModel)]="user.lastname"  name="lastname" id="lastname" type="text" class="input"  required #lastname="ngModel">
+						<label for="lastName" class="label" required>Last Name</label>
+						<input [(ngModel)]="user.lastName"  name="lastName" id="lastName" type="text" class="input"  required #lastName="ngModel">
 
-						<div *ngIf="lastname.touched && lastname.invalid" class="error-message">
+						<div *ngIf="lastName.touched && lastName.invalid" class="error-message">
 							Lastname is required.
 						</div>
 					</div>
@@ -227,7 +136,7 @@
 					
 
 					<div class="group">
-						<input (click)="onSignUp()" type="submit" class="button" value="Sign Up" [disabled]=" signUpForm.touched &&  signUpForm.invalid">
+						<input (click)="onSignUp()" type="submit" class="button" value="Sign Up" [disabled]=" signUpForm.touched && signUpForm.invalid">
 					</div>
 					<div *ngIf="signupFailed" class="error-message">
 						Please fill in the form.

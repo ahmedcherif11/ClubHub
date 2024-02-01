@@ -1,8 +1,12 @@
 footer{
   height: 130px;
   padding: 15px;
-  background-color: var(--navbar-footer-color);
+  background-color: #800020; /* Couleur bordeaux */
+
 }
 .site-logo{
-  font-size: 1.2em;
+  font-size: 23px;
+  color: white;
+  background-color: #800020; /* Couleur bordeaux */
+
 }

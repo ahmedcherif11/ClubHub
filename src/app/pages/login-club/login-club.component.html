@@ -1,255 +1,145 @@
-<<<<<<< HEAD
-=======
-<!--<div class="login-wrap">
-
-
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-
-
-		<input id="tab-3" type="radio" name="tab" class="sign-up-club" ><label for="tab-3" class="tab">Sign Up As A Club </label>
-
-
-
-		<div class="login-form">
-			<div class="sign-in-htm">
-	
-				<div class="group">
-					<label for="username" class="label" required>Username</label>
-					<input [(ngModel)]="club_log.username" id="username" type="text" class="input">
-				</div>
-
-
-
-				<div class="group">
-					<label for="password" class="label" required>Password</label>
-					<input [(ngModel)]="club_log.password" id="password" type="password" class="input" data-type="password">
-				</div>
-
-
-
-				
-			
-				<div class="group">
-					<input (click)="onLoginClub()" type="submit" class="button" value="Sign In">
-
-				</div>
-				
-
-
-				
-
-			</div>
-     
-
-		<div class="sign-up-club-htm">
-        	<div class="group">
-		
-
-			</div>
-
-			<div class="group">
-				<label for="clubname" class="label" required>Club Name </label>
-				<input [(ngModel)]="club.clubname" id="clubname" type="text" class="input" >
-			</div>
-
-
-			<div class="group">
-				<label for="creationdate" class="label" required>Creation Date</label>
-				<input [(ngModel)]="club.creationdate" id="creationdate" type="date" class="input" >
-			</div>
-
-	
-			<div class="group">
-				<label for="university" class="label">University</label>
-				<input [(ngModel)]="club.university" id="university" type="text" class="input" >
-			</div>
-
-
-
-			<div class="group">
-			<label for="field" class="label">Field</label>
-			<select class="input" [(ngModel)]="club.field" formControlName="field" required>
-				
-				<option value="Artistic" class="label">Artistic</option>
-				<option value="entreuprenariat" class="label">Entreuprenariat</option>
-				<option value="Sport" class="label">Sport</option>
-				<option value="hard skills" class="label">Hard skills</option>
-				<option value="Cultural" class="label">Cultural</option>
-				<option value="Political" class="label">Political</option>
-				<option value="Other" class="label">Other</option>
-			  </select>
-			 
-			</div>
-
-
-
-			<div class="group">
-				<label for="username1" class="label">Username</label>
-				<input [(ngModel)]="club.username" id="username1" type="text" class="input" >
-			</div>
-			
-	
-			<div class="group">
-				<label for="password1" class="label">Password</label>
-				<input [(ngModel)]="club.password" id="password1" type="password" class="input" data-type="password">
-			</div>
-			
-
-
-		
-			<div class="group">
-				<input (click)="onSignUpClub()" type="submit" class="button" value="Sign Up As A Club">
-			</div>
-		
-		</div>
-	
-	
-
-    </div>
-</div>	
-</div> 
-
-
--->
+<div class="background-wrap">
+    <img src="/assets/back.jpg" alt="Background">
+  </div>
+  
 <div class="login-wrap">
 	
-<div class="login-html">
-
-		<!-- Radio button for Sign In -->
-		<input id="tab-1" type="radio" name="tab" class="sign-in" (click)="showSignInClubForm()" [checked]="currentForm === 'signInClub'">
-		<label for="tab-1" class="tab">Sign In</label>
-
-		<!-- Radio button for Sign Up -->
-		<input id="tab-2" type="radio" name="tab" class="sign-up-club" (click)="showSignUpClubForm()" [checked]="currentForm === 'signUpClub'">
-		<label for="tab-2" class="tab">Sign Up As A Club</label>
-
+	<div class="login-html">
 	
-		<!-- Login Club -->
-	<div class="login-form">
-
-		<div class="sign-in-htm" *ngIf="currentForm === 'signInClub'">
-			<form #loginClubForm="ngForm" (ngSubmit)="onLoginClub()">
-
-				<div class="group">
-					<label for="username" class="label">Username</label>
-					<input name="username" id="username" type="text" class="input"
-						[(ngModel)]="club_log.username" #username="ngModel" required>
-					<div  *ngIf="username.invalid && username.touched" class="error-message">
-					Username is required.
-					</div>
-				</div>
-
-
-
+			<!-- Radio button for Sign In -->
+			<input id="tab-1" type="radio" name="tab" class="sign-in" (click)="showSignInClubForm()" [checked]="currentForm === 'signInClub'">
+			<label for="tab-1" class="tab">Sign In</label>
+	
+			<!-- Radio button for Sign Up -->
+			<input id="tab-2" type="radio" name="tab" class="sign-up-club" (click)="showSignUpClubForm()" [checked]="currentForm === 'signUpClub'">
+			<label for="tab-2" class="tab">Sign Up As A Club</label>
+	
 		
-				<div class="group">
-					<label for="password" class="label">Password</label>
-					<input name="password" id="password" type="password" class="input" data-type="password"
-						[(ngModel)]="club_log.password" #password="ngModel" required minlength="5">
-					<div *ngIf="password.invalid && password.touched" class="error-message">
-					<div *ngIf="password.errors?.['required']">Password is required.</div>	
-
-
+			<!-- Login Club -->
+		<div class="login-form">
+	
+			<div class="sign-in-htm" *ngIf="currentForm === 'signInClub'">
+				<form #loginClubForm="ngForm" (ngSubmit)="onLoginClub()">
+	
+					<div class="group">
+						<label for="username" class="label">Username</label>
+						<input name="username" id="username" type="text" class="input"
+							[(ngModel)]="club_log.username" #username="ngModel" required>
+						<div  *ngIf="username.invalid && username.touched" class="error-message">
+						Username is required.
+						</div>
 					</div>
-				</div>
-		
-				<div class="group">
-					<input (click)="onLoginClub()" type="submit" class="button" value="Sign In" [disabled]="loginClubForm.invalid  && loginClubForm.touched">
-				</div>
-		
-				
-				<div *ngIf="loginClubFailed" class="error-message">
-					Incorrect username or password.
-				</div>
-			</form>
-		</div>
 	
 	
-
-
-
-
-		<!-- ... sign-up Club form  ... -->
-
 	
-		<div class="sign-up-htm" *ngIf="currentForm === 'signUpClub'">
-			<form #signUpClubForm="ngForm" (ngSubmit)="onSignUpClub()">
-
+			
 					<div class="group">
-						<label for="clubname" class="label">Club Name</label>
-						<input [(ngModel)]="club.clubname" name="clubname" id="clubname" type="text" class="input" required #clubname="ngModel">
-						<div *ngIf="clubname.touched && clubname.invalid" class="error-message">
-							Club Name is required.
+						<label for="password" class="label">Password</label>
+						<input name="password" id="password" type="password" class="input" data-type="password"
+							[(ngModel)]="club_log.password" #password="ngModel" required minlength="5">
+						<div *ngIf="password.invalid && password.touched" class="error-message">
+						<div *ngIf="password.errors?.['required']">Password is required.</div>	
+	
+	
 						</div>
 					</div>
-				
+			
 					<div class="group">
-						<label for="creationdate" class="label">Creation Date</label>
-						<input [(ngModel)]="club.creationdate" name="creationdate" id="creationdate" type="date" class="input" required #creationdate="ngModel">
-						<div *ngIf="creationdate.touched && creationdate.invalid" class="error-message">
-							Creation Date is required.
-						</div>
+						<input (click)="onLoginClub()" type="submit" class="button" value="Sign In" [disabled]="loginClubForm.invalid  && loginClubForm.touched">
 					</div>
-				
-					<div class="group">
-						<label for="university" class="label">University</label>
-						<input [(ngModel)]="club.university" name="university" id="university" type="text" class="input" required #university="ngModel">
-						<div *ngIf="university.touched && university.invalid" class="error-message">
-							University is required.
-						</div>
-					</div>
-				
-					<div class="group">
-						<label for="field" class="label">Field</label>
-						<select class="input" [(ngModel)]="club.field" name="field" id="field" required #field="ngModel">
-							<option value="" disabled selected>Select your option</option>
-							<option value="Artistic">Artistic</option>
-							<option value="entreuprenariat" class="label">Entreuprenariat</option>
-							<option value="Sport" class="label">Sport</option>
-							<option value="hard skills" class="label">Hard skills</option>
-							<option value="Cultural" class="label">Cultural</option>
-							<option value="Political" class="label">Political</option>
-							<option value="Other" class="label">Other</option>
-						</select>
-						<div *ngIf="field.touched && field.invalid" class="error-message">
-							Field is required.
-						</div>
-					</div>
-				
-					<div class="group">
-						<label for="username1" class="label">Username</label>
-						<input [(ngModel)]="club.username" name="username1" id="username1" type="text" class="input" required #username1="ngModel">
-						<div *ngIf="username1.touched && username1.invalid" class="error-message">
-							Username is required.
-						</div>
-					</div>
-				
-					<div class="group">
-						<label for="password1" class="label">Password</label>
-						<input [(ngModel)]="club.password" name="password1" id="password1" type="password" class="input" data-type="password" required minlength="5" #password1="ngModel">
-						<div *ngIf="password1.touched && password1.invalid" class="error-message">
-							<div *ngIf="password1.errors?.['required']">Password is required.</div>
-							<div *ngIf="password1.errors?.['minlength']">Password must be at least 5 characters long.</div>
-						</div>
-					</div>
-				
-					<div class="group">
-					<input (click)="onSignUpClub()"  type="submit" class="button" value="Sign Up As A Club" [disabled]="signUpClubForm.touched &&signUpClubForm.invalid">
-					</div>
+			
 					
-					<div *ngIf="signupClubFailed" class="error-message">
-						Please fill in the form.
+					<div *ngIf="loginClubFailed" class="error-message">
+						Incorrect username or password.
 					</div>
-				
-				
-			</form>
-		</div>
+				</form>
+			</div>
+		
+		
 	
-
+	
+	
+	
+			<!-- ... sign-up Club form  ... -->
+	
+		
+			<div class="sign-up-htm" *ngIf="currentForm === 'signUpClub'">
+				<form #signUpClubForm="ngForm" >
+	
+						<div class="group">
+							<label for="clubname" class="label">Club Name</label>
+							<input [(ngModel)]="club.clubname" name="clubname" id="clubname" type="text" class="input" required #clubname="ngModel">
+							<div *ngIf="clubname.touched && clubname.invalid" class="error-message">
+								Club Name is required.
+							</div>
+						</div>
+					
+						<div class="group">
+							<label for="creationdate" class="label">Creation Date</label>
+							<input [(ngModel)]="club.creationdate" name="creationdate" id="creationdate" type="date" class="input" required #creationdate="ngModel">
+							<div *ngIf="creationdate.touched && creationdate.invalid" class="error-message">
+								Creation Date is required.
+							</div>
+						</div>
+					
+						<div class="group">
+							<label for="university" class="label">University</label>
+							<input [(ngModel)]="club.university" name="university" id="university" type="text" class="input" required #university="ngModel">
+							<div *ngIf="university.touched && university.invalid" class="error-message">
+								University is required.
+							</div>
+						</div>
+					
+						<div class="group">
+							<label for="field" class="label">Field</label>
+							<select class="input" [(ngModel)]="club.field" name="field" id="field" required #field="ngModel">
+								<option value="" disabled selected>Select your option</option>
+								<option value="Artistic">Artistic</option>
+								<option value="entreuprenariat" class="label">Entreuprenariat</option>
+								<option value="Sport" class="label">Sport</option>
+								<option value="hard skills" class="label">Hard skills</option>
+								<option value="Cultural" class="label">Cultural</option>
+								<option value="Political" class="label">Political</option>
+								<option value="Other" class="label">Other</option>
+							</select>
+							<div *ngIf="field.touched && field.invalid" class="error-message">
+								Field is required.
+							</div>
+						</div>
+					
+						<div class="group">
+							<label for="username1" class="label">Username</label>
+							<input [(ngModel)]="club.username" name="username1" id="username1" type="text" class="input" required #username1="ngModel">
+							<div *ngIf="username1.touched && username1.invalid" class="error-message">
+								Username is required.
+							</div>
+						</div>
+					
+						<div class="group">
+							<label for="password1" class="label">Password</label>
+							<input [(ngModel)]="club.password" name="password1" id="password1" type="password" class="input" data-type="password" required minlength="5" #password1="ngModel">
+							<div *ngIf="password1.touched && password1.invalid" class="error-message">
+								<div *ngIf="password1.errors?.['required']">Password is required.</div>
+								<div *ngIf="password1.errors?.['minlength']">Password must be at least 5 characters long.</div>
+							</div>
+						</div>
+					
+						<div class="group">
+						<input (click)="onSignUpClub()"  type="submit" class="button" value="Sign Up As A Club" [disabled]="signUpClubForm.touched &&signUpClubForm.invalid">
+						</div>
+						
+						<div *ngIf="signupClubFailed" class="error-message">
+							Please fill in the form.
+						</div>
+					
+					
+				</form>
+			</div>
+		
+	
+		</div>
 	</div>
-</div>
-
-
-
->>>>>>> 009e02920e4ccdaca61a99162ccb56ed2dd0f680
+	
+	
+	
+	

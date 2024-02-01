@@ -7,6 +7,7 @@ export class Club {
     creationDate:Date;
     field :string;
     role: string;
+    members: any;
     
     constructor(id=0, name="", path='',  description="",creationDate=new Date(), field="",role="") {
       this.id = id;

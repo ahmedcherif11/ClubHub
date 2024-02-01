@@ -25,8 +25,8 @@ export class LoginUserComponent implements OnInit {
 
 
   user={
-    firstname: '',
-    lastname: '', 
+    firstName: '',
+    lastName: '', 
     university: '',
     username: '',
     password: ''
@@ -66,10 +66,11 @@ ngOnInit(): void {}
     },
     err=>{
       console.log(err);
+      this.loginFailed = true;
+
       
     }
   );
-  this.loginFailed = true;
 
 }
 
@@ -78,14 +79,20 @@ onSignUp() {
    
   this._user.onSignUp(this.user)
   .subscribe(
-    res=>{
+    Response=>{
+      console.log(Response);
       this.router.navigate(['/userlogin']);
     },
     err=>{
       console.log(err);
+      this.signupFailed = true;
+      console.log(this.user);
+
     }
   );
-  this.signupFailed = true;
+ 
+  
+
   }
 
   showSignInForm() {
@@ -94,11 +101,9 @@ onSignUp() {
   }
 
   showSignUpForm() {
-    this.currentForm = 'signUp';
+    this.currentForm = 'signUp'
   
   }
 
-
-  
 
 }

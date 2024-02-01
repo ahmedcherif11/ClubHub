@@ -8,7 +8,7 @@
 
 button.liked,
 button.custom-btn-size {
-  background-color: #3d1976; /* A color that matches your theme */
+  background-color:  #800020;; /* A color that matches your theme */
   border: none;
   color: white;
   font-weight: bold; /* Make the text bold */
@@ -20,12 +20,13 @@ button.custom-btn-size {
 
 button.liked:hover,
 button.custom-btn-size:hover {
-  background-color: #0d47a1; /* Darker shade on hover for interaction */
+  background-color:  #800020;; /* Darker shade on hover for interaction */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Larger shadow on hover for depth */
 }
 
 button.liked {
-  background-color: #3ac84f; /* Green color to indicate 'liked' state */
+  background-color: #000000;
+  color: white; /* Green color to indicate 'liked' state */
 }
 
 .like-count {
@@ -50,4 +51,8 @@ button.liked {
 .card p {
   color: #666;
   font-size: 1rem; /* Adjusted font size */
+}
+.container {
+  max-width: 100%; /* Adjust to fit your design */
+
 }
