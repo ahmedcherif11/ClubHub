@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser'
 import { LoginClubService } from 'src/app/services/login-club.service';
+import { LoginUserService } from 'src/app/services/login-user.service';
 
 
 
@@ -25,7 +26,11 @@ export class EventDetailComponent {
     private eventservice: ServiceeventService,
     private clubserv: ClubserviceService,
     private toastr: ToastrService,
-    private _authClub :LoginClubService){}
+    private _authClub :LoginClubService,
+    private _authuser :LoginUserService){}
+    public isLoggedInUser(): boolean {
+      return this._authuser.isLoggedInUser();
+    }
     public isLoggedInClub(): boolean {
       const id=this._authClub.getClubIDFromToken();
       return( this._authClub.isLoggedInClub() && id==this.event.organizer.id) ;
@@ -50,17 +55,25 @@ export class EventDetailComponent {
     );
   }
   participer() {
-  this.eventservice.participate(this.event.id).subscribe(
-    (response) => {console.log("participating ....");
-    this.toastr.success("Vous êtes inscrit" );
-                   },
-    (error) => {if(this.event.places==0) {this.toastr.error("Plus de places disponibles" );}
-                else this.toastr.error("Vous êtes déja inscrit" );}
-
+    this.eventservice.participate(this.event.id).subscribe(
+      (response) => {
+        console.log("participating ....");
+        this.toastr.success("Vous êtes inscrit");
+        setTimeout(() => {
+        window.location.reload();
+      }, 1000);
+      },
+      (error) => {
+        if (this.event.places == 0) {
+          this.toastr.error("Plus de places disponibles");
+        } else {
+          this.toastr.error("Vous êtes déjà inscrit");
+        }
+      }
     );
-  
   }
-  show_liste () {
+
+  show_liste() {
     this.router.navigate(['events', 'participants', this.event.id]);
   }
 }

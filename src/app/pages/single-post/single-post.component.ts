@@ -30,6 +30,8 @@ export class SinglePostComponent {
     this.postService.addlike(this.post.id).subscribe(
       (response) => {
         console.log("like added");
+        window.location.reload();
+
       },
       (error) => {
         console.log("error");

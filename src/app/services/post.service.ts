@@ -40,6 +40,7 @@ export class PostService {
   addlike(id: number): Observable<post[]> {
     const headers = { 'Authorization': 'Bearer ' + localStorage.getItem('token') };
     return this.http.post<post[]>(this.url + `/${id}`+'/like', {}, { headers });
+    window.location.reload();
   }
 
 
